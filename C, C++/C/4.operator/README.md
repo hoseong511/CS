@@ -32,19 +32,19 @@
   - !: 부정
   - && : 그리고
   - || : 또는 
-  ```C
-  #include <stdio.h>
-  int main(){
-    int a, b, c;
-    scanf("%d %d %d", &a, &b, &c);
-    printf("%d\n", !a);
-    printf("%d\n", a && b);
-    printf("%d\n", (a>b) && (b > c));
-    // a > b > c 의 연산을 하게될 경우 원하는 결과를 얻지 못한다.
-    printf("%d", a);
-    printf("%d", b);
-    return 0;
-  }
+    ```C
+    #include <stdio.h>
+    int main(){
+      int a, b, c;
+      scanf("%d %d %d", &a, &b, &c);
+      printf("%d\n", !a);
+      printf("%d\n", a && b);
+      printf("%d\n", (a>b) && (b > c));
+      // a > b > c 의 연산을 하게될 경우 원하는 결과를 얻지 못한다.
+      printf("%d", a);
+      printf("%d", b);
+      return 0;
+    }
 - 증감연산자
   - ++(변수): 변수의 값을 1 증가시킨 후에 증가된 값을 반환
   - (변수)++: 변수의 값을 1 증가시킨 후 증가되기 전의 값을 반환
