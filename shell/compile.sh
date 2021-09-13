@@ -6,7 +6,7 @@
 #    By: hossong <hossong@student.42seoul.kr>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/13 11:38:54 by hossong           #+#    #+#              #
-#    Updated: 2021/09/13 13:40:39 by hoho             ###   ########.fr        #
+#    Updated: 2021/09/13 13:45:55 by hoho             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,8 +20,8 @@ if [ -z `grep -n 'ftcc' ~/.bash_profile | sed -e 's/:.*//g'` ] ; then
 	val=`grep -n 'bash_profile' ~/.zshrc | sed -e 's/:.*//g'`
 	if [ -z $val ] ; then
 		echo "source ~/.bash_profile" >> ~/.zshrc
-		source ~/.zshrc
 	fi
+		source ~/.zshrc
 		echo 'Settings success!'
 else
 	echo 'Already settings'
