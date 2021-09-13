@@ -6,7 +6,7 @@
 #    By: hossong <hossong@student.42seoul.kr>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/13 11:38:54 by hossong           #+#    #+#              #
-#    Updated: 2021/09/13 12:54:36 by hossong          ###   ########.fr        #
+#    Updated: 2021/09/13 13:34:38 by hoho             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,11 +15,14 @@
 # Command : ftcc
 # `ftcc` command is a build and execute your project.
 
-val=`grep -n 'ftcc' ~/.bash_profile | sed -e 's/:.*//g' -e 's/ //g'`
-if [ -z $val ] ; then
+if [ -z `grep -n 'ftcc' ~/.bash_profile | sed -e 's/:.*//g' -e 's/ //g'` ] ; then
 	echo "alias ftcc='gcc -Wall -Wextra -Werror *.c -o exe && ./exe && rm exe'" >> ~/.bash_profile
-	echo "source ~/.bash_profile" >> ~./zshrc
-	source ~./zshrc
+	val=`grep -n 'bash_profile' ~/.zshrc | sed -e 's/:.*//g'`
+	if [ -z $val ] ; then
+		echo "source ~/.bash_profile" >> ~/.zshrc
+		source ~/.zshrc
+	fi
+		echo 'Settings success!'
 else
 	echo 'Already settings'
 fi
