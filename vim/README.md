@@ -1,4 +1,22 @@
-# vim shortcut 
+## vim settings
+### **ui language setting**
+	- root인 경우: 
+			```sh
+			echo "export LANG='en_US'" >> /etc/profile
+			source /etc/profile
+			```
+	- user인 경우:
+			```sh
+			// .vimrc에서
+			let $LANG='en_US'
+			```
+	- 한글깨짐현상:
+			```sh
+			// .vimrc에서
+			set enc=utf-8
+			```
+
+## vim shortcut 
 
 ### **문자, 행, 삽입 명령어**
 커서 | 설명
