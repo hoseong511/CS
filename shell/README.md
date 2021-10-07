@@ -1,5 +1,4 @@
-# Simple command!  compile and excute
-
+# UNIX & LINUX env settings
 ## for Mac, for compile C lang, use a gcc
 
 - ```grep -n ' ' ~/.bash``` : 찾는 문자열이 있으면 해당되는 행의 위치를 출력 
