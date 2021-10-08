@@ -23,3 +23,16 @@ screen -list # screen list 출력
     - `c` : 새로운 쉘 실행
     - `"` : 실행중인 쉘 리스트확인
     - `tab` : 분할된 화면에서 이동 
+
+## 한글 꺠짐 해결하기
+- 터미널에서
+	- `locale`을 확인해보기
+	- `env` 확인해보기
+	- `/etc/profile` 확인해보기
+	- UTF-8$ 또는 utf8$인지 확인을 해야한다.
+	- 내 문제는 UTF-8이 없었다.
+- vim에서
+	- 간단하게 `set encoding=utf-8`로 해결
+	- 인터넷을 찾아보니 `set fileencodigns=utf-8,cp949도 해주라했는데 `/etc/vimrc`를 확인해보니 파일인코딩을 처리해주는 부분이 있었다.
+	- 단, 사용되는 LANG이 UTF-8$이나 utf8$이어야 했다.
+
