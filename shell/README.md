@@ -41,5 +41,5 @@ screen -list # screen list 출력
 - `last -f /var/lof/btmp` 접속 실패 로그 확인이다. `last` 명령어를 사용하면 접속 로그를 확인할 수 있다. (ip가 중국...)
 - 재빨리 키를 만들고 패스워드 접속을 막아 놓을 필요가 있었다.
 - 설정 경로는 ` /etc/ssh/sshd\_config`, PermitRootLogin, PasswordAuthentication, ChallengeResponseAuthentication 를 적절히 설정해주면 된다.
-- 나는 root로 접속은 허용(yes)할 것이고, 비밀번호만 막을거다(no).
+- 나는 root로 접속은 허용(`PermitRootLogin yes`)할 것이고, 비밀번호만 막을거다(`PasswordAuthentication no`).
 - `service sshd reload`로 서비스 재시작하고 위 설정이 반영되었는지 접속을 해보자
