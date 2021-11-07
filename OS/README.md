@@ -139,3 +139,41 @@ int main()
 - 시분할 시스템(다중 사용자 지원, 응답 시간 최소화)
 - 멀티 태스킹 (동시 실행하는 것 처럼 보임)
 - 멀티 프로세싱
+
+---
+
+## 멀티 프로그래밍
+- 최대한 CPU를 많이 활용하도록 하는 시스템
+    - 시간 대비 CPU활용도를 높임.
+    - 응용 프로그램을 짧은 시간 안에 실행 완료를 시킬 수 있음.
+- 응용 프로그램은 온전히 CPU를 쓰기 보다, 다른 작업을 중간에 필요로 하는 경우가 많음.
+    - 응용 프로그램 실행 도중 파일을 읽어들임(저장 장치 접근)
+    - 응용 프로그램이 실행되다가 프린팅.   
+    - example
+        ```c
+        #include <unistd.h>
+
+        int main()
+        {
+            int fd;
+            fd = open("data.txt).O_RDONLY);
+            if(fd == -1)
+            {
+                printf("Error: can not open file\n");
+                return 1;
+            }
+            else
+            {
+                printf("File opened and now close.\n");
+                close(fd);
+                return ();
+            }
+        }
+        ```
+        ![image](https://user-images.githubusercontent.com/62678380/140633758-3495b60e-731f-4d67-aa89-04a7aebe3d97.png)
+    - 메모리 계층 
+        [![image](https://user-images.githubusercontent.com/62678380/140640207-c711c5e7-8da3-413d-9671-c45a37e58ab6.png)](http://computationstructures.org/lectures/caches/caches.html)
+        출처: http://computationstructures.org/lectures/caches/caches.html
+    - System bus 
+        ![image](https://user-images.githubusercontent.com/62678380/140640293-d60264e7-e26a-4e62-a969-3e2bce854f0b.png)   
+        저장매체에는 DMA(Direct Memory Access)가 접근함.
