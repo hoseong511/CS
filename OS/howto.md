@@ -14,8 +14,10 @@
 
 ### **Install**
 1. [CPU](https://github.com/hoseong511/CS/blob/main/OS/cpu.md)확인 후, 데비안 [이미지 선택](https://cdimage.debian.org/cdimage/archive/). ([해당 버전을 사용한 이유](https://ko.wikipedia.org/wiki/%EB%8D%B0%EB%B9%84%EC%95%88#%EB%B0%B0%ED%8F%AC_%EC%97%AD%EC%82%AC))   
-	<img src="https://user-images.githubusercontent.com/62678380/145513483-a82d4334-2da9-4d74-99da-c79cb9d68318.png" width=50% />
-	
+	<p>
+		<img src="https://user-images.githubusercontent.com/62678380/145513483-a82d4334-2da9-4d74-99da-c79cb9d68318.png" width=50% />
+	</p>
+
 2. 이미지를 다운 받았으면 간단히 확인해보자. (`shasum`)   
 	<img src="https://user-images.githubusercontent.com/62678380/145515099-3e28e2ba-621e-49c8-8e24-5f9a37228c39.png" width=50% />
 	   
