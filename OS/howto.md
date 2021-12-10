@@ -13,7 +13,7 @@
 - CPU : 3.1 GHz 6core Intel Core i5
 
 ### **Install**
-1. [CPU](https://github.com/hoseong511/CS/blob/main/OS/cpu.md)확인 후, 데비안 [이미지 선택](https://cdimage.debian.org/cdimage/archive/). ([해당 버전을 사용한 이유](https://ko.wikipedia.org/wiki/%EB%8D%B0%EB%B9%84%EC%95%88#%EB%B0%B0%ED%8F%AC_%EC%97%AD%EC%82%AC))   
+1. [CPU](https://hoseong511.github.io/CS/OS/cpu)확인 후, 데비안 [이미지 선택](https://cdimage.debian.org/cdimage/archive/). ([해당 버전을 사용한 이유](https://ko.wikipedia.org/wiki/%EB%8D%B0%EB%B9%84%EC%95%88#%EB%B0%B0%ED%8F%AC_%EC%97%AD%EC%82%AC))   
 	![image](https://user-images.githubusercontent.com/62678380/145513483-a82d4334-2da9-4d74-99da-c79cb9d68318.png)
 
 2. 이미지를 다운 받았으면 간단히 확인해보자. (`shasum`)   
@@ -130,6 +130,6 @@
 	
 
 ### **Reference**
-- https://parkseunghan.notion.site/born2beroot-afdb78d74995456d9c91a4ae1be9874f
-- https://www.brianlinkletter.com/2012/10/installing-debian-linux-in-a-virtualbox-virtual-machine/
-- https://linuxhint.com/install_debian10_virtualbox/
+- [https://parkseunghan.notion.site/born2beroot-afdb78d74995456d9c91a4ae1be9874f](https://parkseunghan.notion.site/born2beroot-afdb78d74995456d9c91a4ae1be9874f)
+- [https://www.brianlinkletter.com/2012/10/installing-debian-linux-in-a-virtualbox-virtual-machine/](https://www.brianlinkletter.com/2012/10/installing-debian-linux-in-a-virtualbox-virtual-machine/)
+- [https://linuxhint.com/install_debian10_virtualbox/](https://linuxhint.com/install_debian10_virtualbox/)
