@@ -8,10 +8,23 @@
 7. hostname 설정하기
 8. sudo를 설치하고 사용가능하게 설정하기
 9. 언어 설정 바꿔보기 (`dpkg-reconfigure locales`), 한글로 설치를 했더니 중간중간 깨지는 부분이 있다.
-10. 
-
 
 - sshd 및 현재 시스템 내에서 열린 포트를 확인할 수 있다  lsof -i
+	- root 접속 x :   
+		`#PermitRootLogin prohibit-password`  
+		- 기본값이 root 접속 불가
+		- yes이면 root 접속
+	- 비밀번호 접속 설정 : 
+		`#PasswordAuthentication yes`   
+		- 기본값이 비밀번호 접속   
+		- no이면 비밀키 접속
+	- `/etc/ssh/sshd_config` 를 확인하면
+		`#AuthorizedKeysFile	.ssh/authorized_keys .ssh/authorized_keys2`
+		- 기본값이 authorized_keys, authorized_keys2
+		- id_rsa.pub을 해당 기본값의 이름으로 바꾸기
+		- 비밀키 갖고 ssh 접속 가능
+
+	
 - hostname 변경하기
 	- `hostname [이름]` 일시적으로 변경
 	- `hostnamectl set-hostname --static [이름]` 영구적으로 변경
