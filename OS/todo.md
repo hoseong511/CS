@@ -12,8 +12,28 @@
 
 
 - sshd 및 현재 시스템 내에서 열린 포트를 확인할 수 있다  lsof -i
-- `hostname [이름]` 을 하면 일시적으로 바뀌는 것, 영구적으로 바꾸려면 `hostnamectl set-hostname --static [이름]`
+- hostname 변경하기
+	- `hostname [이름]` 일시적으로 변경
+	- `hostnamectl set-hostname --static [이름]` 영구적으로 변경
+	- `shutdown -r now` 시스템을 재시작해야 hostname이 변경
 - su vs su - : su - 는 su -l, su --login 과 같은 명령어다, 로그인해서 접속한 계정의 환경변수를 가져온다. root계정에 환경변수를 하나 등록하고 su로 접속해서 해당 환경변수가 조회되는지 확인하기(env)
+- 그룹 만들고 해당 그룹에 유저를 추가해보기 
+	- `groupadd [이름]`
+	- `groupdel [이름]`
+	- `gpasswd -a [user명] [group명]`
+	- `gpasswd -d [user명] [group명]`
+		- `/etc/sudoers` 를 확인해보면    
+		```sh
+			# Allow members of group sudo to execute any command
+			%sudo	ALL=(ALL:ALL) ALL
+		```
+		- 해당 그룹에 소속되면 sudo 권한을 갖는 것.
+		- 유저에게만 sudo 권한을 주고 싶으면 root 아래에 추가  
+		```sh
+		# User privilege specification
+		root	ALL=(ALL:ALL) ALL
+		```
+
 - 
 - kdump is a feature of the Linux kernel that creates crash dumps in the event of a kernel crash. [link](https://www.thegeekstuff.com/2014/05/kdump/)
 - LVM(Logical Volume manageer)은 Logical Volume을 효율적이고 유연하게 관리하기 위한 커널의 한 부분이자 프로그램이다.
