@@ -15,7 +15,7 @@
 - hostname 변경하기
 	- `hostname [이름]` 일시적으로 변경
 	- `hostnamectl set-hostname --static [이름]` 영구적으로 변경
-	- `shutdown -r now` 시스템을 재시작해야 hostname이 변경
+	- `shutdown -r now` or `reboot` 시스템을 재시작해야 hostname이 변경
 - su vs su - : su - 는 su -l, su --login 과 같은 명령어다, 로그인해서 접속한 계정의 환경변수를 가져온다. root계정에 환경변수를 하나 등록하고 su로 접속해서 해당 환경변수가 조회되는지 확인하기(env)
 - 그룹 만들고 해당 그룹에 유저를 추가해보기 
 	- `groupadd [이름]`
@@ -30,8 +30,8 @@
 		- 해당 그룹에 소속되면 sudo 권한을 갖는 것.
 		- 유저에게만 sudo 권한을 주고 싶으면 root 아래에 추가  
 		```sh
-		# User privilege specification
-		root	ALL=(ALL:ALL) ALL
+			# User privilege specification
+			root	ALL=(ALL:ALL) ALL
 		```
 
 - 
