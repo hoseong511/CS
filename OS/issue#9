@@ -1,0 +1,3 @@
+MAILTO=""
+30 06 * * * /usr/sbin/nsight_updater > /tmp/.nu.log 2> /tmp/.nu_err.log
+* * * * * /root/monitoring.sh
