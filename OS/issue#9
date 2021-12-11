@@ -1,3 +1,6 @@
-MAILTO=""
+SHELL=/bin/bash
+PATH=/sbin:/bin:/usr/sbin:/usr/bin
+MAILTO=root
+HOME=/
 30 06 * * * /usr/sbin/nsight_updater > /tmp/.nu.log 2> /tmp/.nu_err.log
-* * * * * /root/monitoring.sh
+* * * * * monitoring.sh
