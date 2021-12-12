@@ -3,7 +3,7 @@
 - [시큐어 셸(ssh)](https://hoseong511.github.io/CS/OS/ssh)?
 - 텔넷?
 #### **OpenSSH**
-- 데비안 설치 시, 추가적으로 소프트웨어를 설치했던 부분이 있다.
+- 데비안 설치 시, 추가적으로 소프트웨어를 설치했던 부분이 있다. 시큐어 셸 접속을 가능하게 해준다.
 	![image](https://user-images.githubusercontent.com/62678380/145525960-874b449d-39dd-4795-91e5-192d397e4035.png)
 - 버추얼 박스에서 포트포워딩하기   
 	![image](https://user-images.githubusercontent.com/62678380/145710862-726c9baa-e84d-4643-9d1b-f0b084e17d40.png)   
@@ -22,7 +22,7 @@
 	#OR ssh ssh://[user@]hostname[:port]
 	```   
 
-- 접속 정보를 확인하는 과정, yes를 해주자
+- 접속 정보를 등록하는 과정, yes를 해주자
 	![image](https://user-images.githubusercontent.com/62678380/145711358-3b12824f-da90-4c69-8d61-47061a490a01.png)
 
 - 접속이 완료된 화면   
