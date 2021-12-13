@@ -59,3 +59,18 @@
 	- 주석해제하고 `id_rsa.pub` 적어주자
 - 접속완료   
 	![image](https://user-images.githubusercontent.com/62678380/145712564-89e55f38-508c-4e12-af1d-821225790eb9.png)
+
+### SCP
+- secure copy, ssh랑 작동되는 원리는 같음
+- ssh의 포트는 -p, scp의 포트는 -P 대/소문자 구별!!  
+	```sh
+	# local -> remote
+	scp -i [identity file] -P [port] [target file][user@][host]:[path]
+	scp -i [identity file] [target file] scp:// [user@][host][:port][/path]
+	# remote -> local
+	scp -i [identity file] -P [port] [user@][host]:[target file] [/path]
+	```
+### **Reference**
+- [https://ko.wikipedia.org/wiki/%EC%8B%9C%ED%81%90%EC%96%B4_%EC%85%B8](https://ko.wikipedia.org/wiki/%EC%8B%9C%ED%81%90%EC%96%B4_%EC%85%B8)
+- [https://ko.wikipedia.org/wiki/%ED%85%94%EB%84%B7](https://ko.wikipedia.org/wiki/%ED%85%94%EB%84%B7)
+- [https://zetawiki.com/wiki/%EB%A6%AC%EB%88%85%EC%8A%A4_scp_%EC%82%AC%EC%9A%A9%EB%B2%95](https://zetawiki.com/wiki/%EB%A6%AC%EB%88%85%EC%8A%A4_scp_%EC%82%AC%EC%9A%A9%EB%B2%95)
