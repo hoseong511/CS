@@ -12,7 +12,10 @@
 - kdump-tools를 설치하면 kexec-tools, makedumpfiles이 dependacy로 되어있다.
 - kexec-tools
 	- 현재 커널에서 BIOS, 부트로더 등을 거치지 않고 새로운 커널로 부팅 할 수 있다. 이는 crash dump에서 kernel crash가 발생했을 경우 kexec를 이용하여 새로운 커널(second kernel, capture kernel)로 부팅을 하게 되고, 메모리를 dump하는것   
-	- 리부팅이 안된다.. 왜인지 알수가 없다. why didn't work kdump on virtual box
+	- 리부팅이 안된다.. 왜인지 알수가 없다. why didn't work kdump on virtual box   
+	-> [https://bugzilla.redhat.com/show_bug.cgi?id=1028397](https://bugzilla.redhat.com/show_bug.cgi?id=1028397)
+	- 암호화된 LVM이어서 덤프를 만들 수가 없는 것.
+	- 암호화된 LVM을 제외하고는 가능!
 [![asciicast](https://asciinema.org/a/V9CU5mSfCrQDMYnd2SH0uLlMw.svg)](https://asciinema.org/a/V9CU5mSfCrQDMYnd2SH0uLlMw)
 
 ### **Reference**
