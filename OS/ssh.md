@@ -1,5 +1,6 @@
 ## 시큐어 셸(SSH)서비스 이용하기
 ### **시큐어 셸 클라이언트**
+- [셸(Shell)?](https://hoseong511.github.io/CS/OS/shell)
 - [시큐어 셸(SSH)](https://ko.wikipedia.org/wiki/%EC%8B%9C%ED%81%90%EC%96%B4_%EC%85%B8)?
 	- SSH(Secure Shell)는 네트워크 상의 다른 컴퓨터에 로그인하거나 원격 시스템에서 명령을 실행하고 다른 시스템으로 파일을 복사할 수 있도록 해주는 응용프로그램 또는 그 프로토콜을 가리킨다.
 	- 기존 remote shell, rlogin, telnet 등을 대체하기 위해 설계되었으며, 강력한 인증 방법(공개-비밀 키) 및 안전하지 못한 네트워크에서 안전하게 통신을 할 수 있는 기능을 제공한다.
