@@ -1,24 +1,32 @@
 ## How to install debian on virtual box
 1. 맥, 윈도우, 리눅스 OS들에 대해서, 클러스터는 왜 맥을 사용할까?
 1. 가상화는 뭘까?, 가상화를 하는 이유는 뭘까?, 버추얼박스를 사용하는 이유는?
+	- [virtual](https://hoseong511.github.io/CS/OS/virtual) 완료
 1. 리눅스 배포판 중 데비안, 레드햇, 센토스, 우분투, 페도라 각 특징은?
+	- [debian](https://hoseong511.github.io/CS/OS/debian) 완료
 1. 데비안 설치방법?
+	- [How to install](https://hoseong511.github.io/CS/OS/howto) 완료
 1. LVM?, 암호화된 LVM된 파티션을 만드는 방법은?, LVM을 사용하기 -> LVM을 설정하는 방법?
 1. KDump? AppArmor? SELinux?, 설정하는 법?
-1. 리눅스 배포판 별로 apt-get, aptitude, yum, rpm, dpkg, ... 들이 뭘까?
+	- kdump는 활성화는 됨. 커널 패닉 시, dump 파일을 만들고 재부팅되는 과정 확인이 안되는 상황
+	- 
+1. 리눅스 배포판 별로 apt-get, apt, aptitude, yum, rpm, dpkg, ... 들이 뭘까?
+	- apt(Advanced Packaging Tool)는 데비안 GNU/리눅스 계열의 패키지 관리 명령도구로 우분투에서도 지원
+		- apt-get : 인증된 소스에서 패키지 및 패키지에 대한 정보를 검색하고 종속상과 함께 패키지를 설치, 업그레이드 및 제거
+		- apt : 더 나은 대화식 사용을 위한 고급 명령 줄 인터페이스임.
 1. ssh?, ssh 설정?, public-private key?, 암호화 알고리즘으로 키를 생성, ssh client이용,
 	- [ssh 정리](https://hoseong511.github.io/CS/OS/ssh) 완료
-	- scp 사용 해보기   
-		ssh의 포트는 -p, scp의 포트는 -P 대/소문자 구별!!   
-		```sh
-		scp -i [identity file] -P [port] [target file]
- [user@][host]:[path]
-		# OR scp -i [identity file] [target file] scp:// [user@][host][:port][/path]
-		```
 1. 유저를 추가하는 명령어, sudo를 줄 수 있는 방법들?, 
 1. 방화벽?, UFW 방화벽을 설정하고 포트는 4242만 열어두기, DNF?
 1. hostname 설정하는 방법들?
-1. 인트라아이디를 유저명으로 하는 유저 생성, sudo와 user42 그룹에 포함
+	- 완료   
+	![image](https://user-images.githubusercontent.com/62678380/145750745-f54a4653-ec87-46f5-a814-4f34673a9f35.png)   
+
+1. 인트라아이디를 유저명으로 하는 유저 생성, sudo와 user42 그룹에 포함
+	- 완료   
+	![image](https://user-images.githubusercontent.com/62678380/145750818-be7de8a0-ae0b-4949-8175-8892fdec07e9.png)
+
+
 1. 강력한 비밀번호 정책사용하기
 	- 현재 비밀번호는 30일 마다 소멸
 	- 변경을 위해 기다려야 하는 기간은 최소 이틀로 설정
@@ -67,7 +75,12 @@
 - hostname 변경하기
 	- `hostname [이름]` 일시적으로 변경
 	- `hostnamectl set-hostname --static [이름]` 영구적으로 변경
+		- static 옵션 붙이면 이름에 대문자 사용이 가능해짐
 	- `shutdown -r now` or `reboot` 시스템을 재시작해야 hostname이 변경
+	![image](https://user-images.githubusercontent.com/62678380/145750098-5c9b7e8a-452c-4e9b-8454-fb0bd473e584.png)   
+	- sudo로 실행 시 위와 같은 오류 발생.
+	- `/etc/hosts`에 적혀있는 hostname이 달라서 발생하는 것   
+	![image](https://user-images.githubusercontent.com/62678380/145750317-8ed9e132-f2f2-4d01-9d39-aa28b253445e.png)
 - su vs su - : su - 는 su -l, su --login 과 같은 명령어다, 로그인해서 접속한 계정의 환경변수를 가져온다. root계정에 환경변수를 하나 등록하고 su로 접속해서 해당 환경변수가 조회되는지 확인하기(env)
 - 그룹 만들고 해당 그룹에 유저를 추가해보기 
 	- `groupadd [이름]`
