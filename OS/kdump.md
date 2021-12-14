@@ -18,28 +18,29 @@ Linux kernel panic 발생 -> 디스크 메모리 dump화 -> 새로운 커널로 
 - `sudo apt-get install kdump-tools`
 	- kexec-tools 재부팅 옵션 : yes -> 새로운 커널로 재부팅 할건지?
 	- kdump-tools 항상사용 여부 옵션 : yes
-- 설치가 완료된 후 재부팅을 해주어야 kexec-tools과 kdump-tools 이 사용가능해진다.
+- 설치가 완료된 후 재부팅을 해주어야 kexec-tools과 kdump-tools 이 사용가능해진다.   
+[![asciicast](https://asciinema.org/a/V9CU5mSfCrQDMYnd2SH0uLlMw.svg)](https://asciinema.org/a/V9CU5mSfCrQDMYnd2SH0uLlMw)  
 <!-- - kdump가 작동되기 위한 몇 가지 설정.
 	- crashkernel: kernel panic으로 현재 시스템이 종료될 시, 새로운 커널(crashkernel)로 부팅되게 하는 옵션. 메모리를 지정해준다(ex. crashkernel=384M-:128M)
 	- kexec_crash_loaded : 1로 세팅 -->
+	
 - 재부팅 후, crashkernel 확인
 	```sh
-		su -  
-		cat /proc/cmdline # crashkernel 메모리 사이즈 확인
-		vi /etc/default/kexec # USE_GRUB_CONFIG=true 로 변경
-		vi /etc/default/grub.d/kexec-tools.cfg # 추가적으로 필요하면 여기서 crarshkernel 메모리 사이즈 설정
-		update-grub # 바꾼 설정 업데이트
-		reboot
-		kdump-config show # ready to kdump 확인
+	su -  
+	cat /proc/cmdline # crashkernel 메모리 사이즈 확인
+	vi /etc/default/kexec # USE_GRUB_CONFIG=true 로 변경
+	vi /etc/default/grub.d/kexec-tools.cfg # 추가적으로 필요하면 여기서 crarshkernel 메모리 사이즈 설정
+	update-grub # 바꾼 설정 업데이트
+	reboot
+	kdump-config show # ready to kdump 확인
 	```
 - 강제 kernel panic 
 	```sh
-		cat /proc/sys/kernel/sysrq # 0이 아닌지 확인, 0이면 sudo sysctl -w kernel.sysrq=1
-		echo c > /proc/sysrq-trigger
+	cat /proc/sys/kernel/sysrq # 0이 아닌지 확인, 0이면 sudo sysctl -w kernel.sysrq=1
+	echo c > /proc/sysrq-trigger
 	```   
 	- 재부팅 된 후, `ls /var/crash` 확인 -> 날짜로된 디렉토리가 생성된 것을 확인
 		
-[![asciicast](https://asciinema.org/a/V9CU5mSfCrQDMYnd2SH0uLlMw.svg)](https://asciinema.org/a/V9CU5mSfCrQDMYnd2SH0uLlMw)
 
 ### TruobleShooting
 - 리부팅이 안된다.. 왜인지 알수가 없다. 
