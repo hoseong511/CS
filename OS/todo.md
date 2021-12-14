@@ -7,6 +7,10 @@
 1. 데비안 설치방법?
 	- [How to install](https://hoseong511.github.io/CS/OS/howto) 완료
 1. LVM?, 암호화된 LVM된 파티션을 만드는 방법은?, LVM을 사용하기 -> LVM을 설정하는 방법?
+	- [LVM?](https://hoseong511.github.io/CS/OS/lvm)
+	- LV 추가하는 시나리오
+	- LV 문제 해결 
+	- SWAP : 디스크내에 존재하는 가상적인 메모리 공간, 물리적인 메모리(RAM) 연장 공간처럼 쓰이는 공간을 스왑이라고 한다. 하드 디스크의 일부를 RAM처럼 사용할 수 있게 만드는 것
 1. KDump? AppArmor? SELinux?, 설정하는 법?
 	- kdump는 활성화는 됨. 커널 패닉 시, dump 파일을 만들고 재부팅되는 과정 확인이 안되는 상황
 	- kdump 재부팅 안되는 원인 파악 완료 [kdump 정리](https://hoseong511.github.io/CS/OS/kdump)
@@ -14,7 +18,7 @@
 
 1. 리눅스 배포판 별로 apt-get, apt, aptitude, yum, rpm, dpkg, ... 들이 뭘까?
 	- apt(Advanced Packaging Tool)는 데비안 GNU/리눅스 계열의 패키지 관리 명령도구로 우분투에서도 지원
-		- apt-get : 인증된 소스에서 패키지 및 패키지에 대한 정보를 검색하고 종속상과 함께 패키지를 설치, 업그레이드 및 제거
+		- apt-get : 인증된 소스에서 패키지 및 패키지에 대한 정보를 검색하고 종속성과 함께 패키지를 설치, 업그레이드 및 제거
 		- apt : 더 나은 대화식 사용을 위한 고급 명령 줄 인터페이스임.
 1. ssh?, ssh 설정?, public-private key?, 암호화 알고리즘으로 키를 생성, ssh client이용,
 	- [ssh 정리](https://hoseong511.github.io/CS/OS/ssh) 완료
