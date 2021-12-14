@@ -46,7 +46,6 @@ Linux kernel panic 발생 -> 디스크 메모리 dump화 -> 새로운 커널로 
 - 리부팅이 안된다.. 왜인지 알수가 없다. 
 	why didn't work kdump on virtual box...   
 -> [https://bugzilla.redhat.com/show_bug.cgi?id=1028397](https://bugzilla.redhat.com/show_bug.cgi?id=1028397)
-- 
 - 암호화된 LVM이어서 덤프를 만들 수가 없는 것.
 - 암호화된 LVM을 제외하고는 가능!
 
