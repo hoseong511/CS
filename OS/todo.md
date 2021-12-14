@@ -23,6 +23,9 @@
 1. ssh?, ssh 설정?, public-private key?, 암호화 알고리즘으로 키를 생성, ssh client이용,
 	- [ssh 정리](https://hoseong511.github.io/CS/OS/ssh) 완료
 1. 유저를 추가하는 명령어, sudo를 줄 수 있는 방법들?, 
+	- 그룹으로 지정하기 -> sudo 그룹에 포함시키면 끝.
+	- 유저하나만 지정하기 -> `visudo`로 설정해주기, `etc/sudoers`에서 수정하기.
+	- [https://unix.stackexchange.com/questions/476416/adding-a-user-to-sudo-group-vs-creating-a-sudoers-file](https://unix.stackexchange.com/questions/476416/adding-a-user-to-sudo-group-vs-creating-a-sudoers-file)
 1. 방화벽?, UFW 방화벽을 설정하고 포트는 4242만 열어두기, DNF?
 1. hostname 설정하는 방법들?
 	- 완료   
