@@ -9,7 +9,9 @@
 1. LVM?, 암호화된 LVM된 파티션을 만드는 방법은?, LVM을 사용하기 -> LVM을 설정하는 방법?
 1. KDump? AppArmor? SELinux?, 설정하는 법?
 	- kdump는 활성화는 됨. 커널 패닉 시, dump 파일을 만들고 재부팅되는 과정 확인이 안되는 상황
-	- 
+	- kdump 재부팅 안되는 원인 파악 완료 [kdump 정리](https://hoseong511.github.io/CS/OS/kdump)
+	- AppArmor
+
 1. 리눅스 배포판 별로 apt-get, apt, aptitude, yum, rpm, dpkg, ... 들이 뭘까?
 	- apt(Advanced Packaging Tool)는 데비안 GNU/리눅스 계열의 패키지 관리 명령도구로 우분투에서도 지원
 		- apt-get : 인증된 소스에서 패키지 및 패키지에 대한 정보를 검색하고 종속상과 함께 패키지를 설치, 업그레이드 및 제거
@@ -82,6 +84,7 @@
 	- `/etc/hosts`에 적혀있는 hostname이 달라서 발생하는 것   
 	![image](https://user-images.githubusercontent.com/62678380/145750317-8ed9e132-f2f2-4d01-9d39-aa28b253445e.png)
 - su vs su - : su - 는 su -l, su --login 과 같은 명령어다, 로그인해서 접속한 계정의 환경변수를 가져온다. root계정에 환경변수를 하나 등록하고 su로 접속해서 해당 환경변수가 조회되는지 확인하기(env)
+	![image](https://user-images.githubusercontent.com/62678380/145932616-2fbf081c-9956-433e-b1bc-90909160a939.png)
 - 그룹 만들고 해당 그룹에 유저를 추가해보기 
 	- `groupadd [이름]`
 	- `groupdel [이름]`

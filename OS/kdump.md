@@ -42,7 +42,7 @@ Linux kernel panic 발생 -> 디스크 메모리 dump화 -> 새로운 커널로 
 	- 재부팅 된 후, `ls /var/crash` 확인 -> 날짜로된 디렉토리가 생성된 것을 확인
 		
 
-### TruobleShooting
+### TroubleShooting
 - 리부팅이 안된다.. 왜인지 알수가 없다. 
 	why didn't work kdump on virtual box...   
 -> [https://bugzilla.redhat.com/show_bug.cgi?id=1028397](https://bugzilla.redhat.com/show_bug.cgi?id=1028397)
