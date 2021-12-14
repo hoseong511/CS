@@ -2,7 +2,7 @@
 ### **가상화?**
 - 하드웨어에 종속된 리소스를 사용해 유용한 IT 서비스를 만들 수 있는 기술(VT-x, VT-d)
 - 단일한 물리 하드웨어 시스템에서 여러 시뮬레이션 환경이나 전용 리소스를 생성할 수 있는 기술
-- 하이퍼바이저(Hypervisor)[^하이퍼바이저]라 불리는 소프트웨어(ex. Virtual Box)가 하드웨어에 직접 연결되며 1개의 시스템을 가상머신(Virtual Machine;VM)이라는 별도의 고유하고 안전한 환경으로 분할할 수 있다.
+- 하이퍼바이저[^Hypervisor]라 불리는 소프트웨어(ex. Virtual Box)가 하드웨어에 직접 연결되며 1개의 시스템을 가상머신(Virtual Machine;VM)이라는 별도의 고유하고 안전한 환경으로 분할할 수 있다.
 - 하이퍼바이저가 설치된 물리 하드웨어를 **호스트**라고 하며 그 리소스를 사용하는 여러 VM을 **게스트**라고 한다.([SSH](https://hoseong511.github.io/CS/OS/ssh) 포트포워딩 참조)
 - 게스트는 CPU, 메모리, 스토리지 등의 컴퓨팅 리소스를 처리하는 리소스 풀이고 컴퓨터 리소스를 쉽게 재배치할 수 있음.
 
@@ -25,4 +25,4 @@
 ### **Reference**
 - [https://www.redhat.com/ko/topics/virtualization/what-is-virtualization](https://www.redhat.com/ko/topics/virtualization/what-is-virtualization)
 
-[^하이퍼바이저] : 가상 머신을 생성하고 구동하는 소프트웨어이다. 가상 머신 모니터라고도 불리는 하이퍼바이저는 하이퍼바이저 운영 체제와 가상 머신의 리소스를 분리해 VM의 생성과 관리를 지원.
+[^Hypervisor]: 가상 머신을 생성하고 구동하는 소프트웨어이다. 가상 머신 모니터라고도 불리는 하이퍼바이저는 하이퍼바이저 운영 체제와 가상 머신의 리소스를 분리해 VM의 생성과 관리를 지원.
