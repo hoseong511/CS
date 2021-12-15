@@ -1,35 +1,81 @@
 ## How to install debian on virtual box
 1. 맥, 윈도우, 리눅스 OS들에 대해서, 클러스터는 왜 맥을 사용할까?
+
 1. 가상화는 뭘까?, 가상화를 하는 이유는 뭘까?, 버추얼박스를 사용하는 이유는?
 	- [virtual](https://hoseong511.github.io/CS/OS/virtual) 완료
+	<br>
+
 1. 리눅스 배포판 중 데비안, 레드햇, 센토스, 우분투, 페도라 각 특징은?
 	- [debian](https://hoseong511.github.io/CS/OS/debian) 완료
+	<br>
+
 1. 데비안 설치방법?
 	- [How to install](https://hoseong511.github.io/CS/OS/howto) 완료
+	<br>
+
 1. LVM?, 암호화된 LVM된 파티션을 만드는 방법은?, LVM을 사용하기 -> LVM을 설정하는 방법?
-	- [LVM?](https://hoseong511.github.io/CS/OS/lvm)
+	- [LVM?](https://hoseong511.github.io/CS/OS/lvm) 완료
+	<br>
+
 	- LV 추가하는 시나리오
+	<br>
+
 	- LV 문제 해결 
+	<br>
+
 	- SWAP : 디스크내에 존재하는 가상적인 메모리 공간, 물리적인 메모리(RAM) 연장 공간처럼 쓰이는 공간을 스왑이라고 한다. 하드 디스크의 일부를 RAM처럼 사용할 수 있게 만드는 것
+	<br>
+
 1. KDump? AppArmor? SELinux?, 설정하는 법?
 	- kdump는 활성화는 됨. 커널 패닉 시, dump 파일을 만들고 재부팅되는 과정 확인이 안되는 상황
+	<br>
+	
 	- kdump 재부팅 안되는 원인 파악 완료 [kdump 정리](https://hoseong511.github.io/CS/OS/kdump)
-	- AppArmor
+	<br>
+
+	- [AppArmor](https://hoseong511.github.io/CS/OS/apparmor) 완료
+	<br>
 
 1. 리눅스 배포판 별로 apt-get, apt, aptitude, yum, rpm, dpkg, ... 들이 뭘까?
-	- apt(Advanced Packaging Tool)는 데비안 GNU/리눅스 계열의 패키지 관리 명령도구로 우분투에서도 지원
-		- apt-get : 인증된 소스에서 패키지 및 패키지에 대한 정보를 검색하고 종속성과 함께 패키지를 설치, 업그레이드 및 제거
-		- apt : 더 나은 대화식 사용을 위한 고급 명령 줄 인터페이스임.
+	- apt(Advanced Packaging Tool)는 데비안 GNU/리눅스 계열의 패키지 관리 명령도구로 우분투에서도 지원 
+		- apt-get : 인증된 소스에서 패키지 및 패키지에 대한 정보를 검색하고 종속성과 함께 패키지를 설치, 업그레이드 및 제거. 오래전부터 사용되어와서 안정적이고 호환성이 높다는 장점.
+		<br>
+
+		- apt(Adbanced Packaging Tool) : apt-get와 내부 동작의 차이는 거의 없다. apt에서는 apt-get에서 자주 사용하는 옵션들을 추출해서 사용자들이 사용하고 보기 편하게 만듦. 추가적인 정보를 제공! [참조](https://askubuntu.com/questions/445384/what-is-the-difference-between-apt-and-apt-get)   
+		<br>
+		![image](https://user-images.githubusercontent.com/62678380/146123335-e995fdc6-4bea-40bc-bcfb-7a4675f0892f.png)
+		<br>
+
+		- aptitude : apt의 프론트엔드 프로그램이다. 소프트웨어 패키지의 목록을 보여주고, 사용자가 패키지를 능동적으로 설치 혹은 삭제하도록 허용함. 
+			```sh
+			$ apt install aptitude
+			$ aptitude
+			```   
+			![image](https://user-images.githubusercontent.com/62678380/146129975-03b1cbc3-0001-4b5d-9027-cef320985a11.png)
+	<br>
+
 1. ssh?, ssh 설정?, public-private key?, 암호화 알고리즘으로 키를 생성, ssh client이용,
 	- [ssh 정리](https://hoseong511.github.io/CS/OS/ssh) 완료
+	<br>
+
 1. 유저를 추가하는 명령어, sudo를 줄 수 있는 방법들?, 
 	- 그룹으로 지정하기 -> sudo 그룹에 포함시키면 끝.
+	<br>
+
 	- 유저하나만 지정하기 -> `visudo`로 설정해주기, `etc/sudoers`에서 수정하기.
+	<br>
+
 	- [https://unix.stackexchange.com/questions/476416/adding-a-user-to-sudo-group-vs-creating-a-sudoers-file](https://unix.stackexchange.com/questions/476416/adding-a-user-to-sudo-group-vs-creating-a-sudoers-file)
+	<br>
+
 1. 방화벽?, UFW 방화벽을 설정하고 포트는 4242만 열어두기, DNF?
+	- [ufw](https://hoseong511.github.io/CS/OS/firewall) 완료
+	<br>
+
 1. hostname 설정하는 방법들?
 	- 완료   
-	![image](https://user-images.githubusercontent.com/62678380/145750745-f54a4653-ec87-46f5-a814-4f34673a9f35.png)   
+	![image](https://user-images.githubusercontent.com/62678380/145750745-f54a4653-ec87-46f5-a814-4f34673a9f35.png)
+	<br>
 
 1. 인트라아이디를 유저명으로 하는 유저 생성, sudo와 user42 그룹에 포함
 	- 완료   
@@ -37,18 +83,43 @@
 
 
 1. 강력한 비밀번호 정책사용하기
-	- 현재 비밀번호는 30일 마다 소멸
-	- 변경을 위해 기다려야 하는 기간은 최소 이틀로 설정
-	- 비밀번호 소멸 7일 전에 경고 메시지
+	- 현재 비밀번호는 30일 마다 소멸 -> PASS_MAX_DAYS
+	- 변경을 위해 기다려야 하는 기간은 최소 이틀로 설정 -> PASS_MIN_DAYS, 0으로 하면 변경한 후 바로 또 변경이 가능하다
+	- 비밀번호 소멸 7일 전에 경고 메시지 -> PASS_WARN_AGE
 	- 비밀번호는 최소 10글자 이상, 대문자와 숫자를 포함, 같은 글자 3번 이상 연속되면 안됨, 유저명 포함x
 	- 이전 비밀번호에 포함되지 않는 문자 최소 7개 이상
 	- 루트 권한 비밀번호 또한 해당 규칙을 따라야 함.
+	- [https://nostressdev.tistory.com/9](https://nostressdev.tistory.com/9)
+	- `/etc/login.defs`에 비밀번호 관련 날짜를 설정할 수 있다. 다만 현재 존재하는 계정들에는 `chage`명령어로 바꿔주어야 한다.
+	- `passwd -e [user]` 하면 해당 유저의 암호가 만료됨.   
+		```
+		qwer1234QWER
+		qwer1DF56789
+		qwer1234QWER
+		````
+	<br>
+
+
 1. sudo? sudo strict rules? 
 	- sudo 인증 시, 비밀번호가 틀렸을 때 3번의 기회만 주어짐
 	- sudo 권한 사용 중, 비밀번호가 틀렸을 때 설정한 오류 메시지가 출력
 	- sudo 권한을 이용하여 수행한 명령어들 입출력 모두 기록되어야 함. log 파일로 `/var/log/sudo/` 폴더에 저장되어야함.
 	- tty?, tty 모드는 활성화
+		- tty에 대해서 좀 더 공부가 필요!!
 	- sudo 권한으로 이용할 수 있는 폴더 경로는 반드시 제한
+		- secure_path를 설정하는 이유 [link](https://www.tuwlab.com/ece/24044)
+	- [https://ko.linux-console.net/?p=1985](https://ko.linux-console.net/?p=1985)   
+	```
+	Defaults        secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin"
+	Defaults        passprompt="비밀번호를 묻는다"
+	Defaults        badpass_message="비밀번호 틀림 다시 시도!"
+	Defaults        requiretty
+	Defaults        log_input, log_output
+	Defaults        iolog_dir="/var/log/sudo"
+	Defaults        passwd_tries=3
+	```
+	<br>
+
 1. bash 환경에서 작동되는 monitoring.sh를 작성
 	- cron? 10분 마다 작동되고 오류 발생 처리하기
 	- 운영체제의 아키텍쳐와 커널 버전
