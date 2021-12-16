@@ -123,24 +123,27 @@
 
 1. bash 환경에서 작동되는 monitoring.sh를 작성
 	- cron? 10분 마다 작동되고 오류 발생 처리하기
-	- 운영체제의 아키텍쳐와 커널 버전
-	- 물리 프로세서의 개수
-	- 가상 프로세서의 개수
+	- 운영체제의 아키텍쳐와 커널 버전 `uname -a`
+	- 물리 프로세서의 개수 `grep -c physical\ id /proc/cpuinfo`
+	- 가상 프로세서의 개수 `grep -c processor /proc/cpuinfo`
 	- 서버 내에서 사용가능한 램 가동률을 백분율로 표시
 	- 서버 내에서 사용가능한 메모리 가동률을 백분율로 표시
 	- 현재 프로세서 가동률을 백분율로 표시
-	- 마지막 부팅 시간과 날짜
-	- LVM이 활성화 되었는지 여부
-	- 활성화된 연결 수
-	- 서버를 사용하고 있는 유저 수 `who | wc -l`
+	- 마지막 부팅 시간과 날짜 `who -b | awk '{print $3, $4}'`
+	- LVM이 활성화 되었는지 여부 `if [$(lsblk | grep -c lvm) > 0 ] then echo "yes" else echo "no"fi`
+	- 활성화된 연결 수 `ss | grep -c tcp`
+	- 서버를 사용하고 있는 유저 수 `users | wc -w`
 	- 서버의 IPv4 주소와 MAC (Media Access Control = 매체 접근 제어) 주소 ` `, `ip addr | grep ether | awk '{print $2}'`
 	- sudo로 실행된 커맨드의 수 `grep sudo /var/log/auth.log | grep -c COMMAND=`
+	<br>
+
 9. 언어 설정 바꿔보기 (`dpkg-reconfigure locales`), 한글로 설치를 했더니 중간중간 깨지는 부분이 있다.
 
 - sshd 및 현재 시스템 내에서 열린 포트를 확인할 수 있다  lsof -i
 	- root 접속 x :   
-		`#PermitRootLogin prohibit-password`  
-		- 기본값이 root 접속 불가
+		`#PermitRootLogin no` , prohibit-password은 비밀키로 접근은 가능 
+		- 기본값이 root 비밀번호 접속 불가
+		- no이면 비밀키, 비밀번호 접속 불가
 		- yes이면 root 접속
 	- 비밀번호 접속 설정 : 
 		`#PasswordAuthentication yes`   
