@@ -108,7 +108,8 @@
 		- tty에 대해서 좀 더 공부가 필요!!
 	- sudo 권한으로 이용할 수 있는 폴더 경로는 반드시 제한
 		- secure_path를 설정하는 이유 [link](https://www.tuwlab.com/ece/24044)
-	- [https://ko.linux-console.net/?p=1985](https://ko.linux-console.net/?p=1985)   
+	- [https://ko.linux-console.net/?p=1985](https://ko.linux-console.net/?p=1985)
+	- [https://www.sudo.ws/docs/man/1.8.15/sudoers.man/](https://www.sudo.ws/docs/man/1.8.15/sudoers.man/)   
 	```
 	Defaults        secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin"
 	Defaults        passprompt="비밀번호를 묻는다"
@@ -120,7 +121,7 @@
 	```
 	<br>
 
-1. bash 환경에서 작동되는 monitoring.sh를 작성
+1. bash 환경에서 작동되는 monitoring.sh를 작성
 	- cron? 10분 마다 작동되고 오류 발생 처리하기
 	- 운영체제의 아키텍쳐와 커널 버전
 	- 물리 프로세서의 개수
@@ -131,9 +132,9 @@
 	- 마지막 부팅 시간과 날짜
 	- LVM이 활성화 되었는지 여부
 	- 활성화된 연결 수
-	- 서버를 사용하고 있는 유저 수
-	- 서버의 IPv4 주소와 MAC (Media Access Control = 매체 접근 제어) 주소
-	- sudo로 실행된 커맨드의 수
+	- 서버를 사용하고 있는 유저 수 `who | wc -l`
+	- 서버의 IPv4 주소와 MAC (Media Access Control = 매체 접근 제어) 주소 ` `, `ip addr | grep ether | awk '{print $2}'`
+	- sudo로 실행된 커맨드의 수 `grep sudo /var/log/auth.log | grep -c COMMAND=`
 9. 언어 설정 바꿔보기 (`dpkg-reconfigure locales`), 한글로 설치를 했더니 중간중간 깨지는 부분이 있다.
 
 - sshd 및 현재 시스템 내에서 열린 포트를 확인할 수 있다  lsof -i
