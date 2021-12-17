@@ -27,7 +27,7 @@
 	<br>
 
 1. KDump? AppArmor? SELinux?, 설정하는 법?
-	- kdump는 활성화는 됨. 커널 패닉 시, dump 파일을 만들고 재부팅되는 과정 확인이 안되는 상황
+	- kdump는 활성화는 됨. 커널 패닉 시, dump 파일을 만들고 재부팅되는 과정 확인이 안되는 상황 [coredump?](https://ko.wikipedia.org/wiki/%EC%BD%94%EC%96%B4_%EB%8D%A4%ED%94%84)
 	<br>
 	
 	- kdump 재부팅 안되는 원인 파악 완료 [kdump 정리](https://hoseong511.github.io/CS/OS/kdump)
@@ -126,11 +126,11 @@
 	- 운영체제의 아키텍쳐와 커널 버전 `uname -a`
 	- 물리 프로세서의 개수 `grep -c physical\ id /proc/cpuinfo`
 	- 가상 프로세서의 개수 `grep -c processor /proc/cpuinfo`
-	- 서버 내에서 사용가능한 램 가동률을 백분율로 표시
-	- 서버 내에서 사용가능한 메모리 가동률을 백분율로 표시
+	- 서버 내에서 사용가능한 램 가동률을 백분율로 표시 `free -m | grep Mem | awk '{ printf "%d/%dMB (%.2f%%)\n", $3, $2, ($3/$2 * 100.0) }'`
+	- 서버 내에서 사용가능한 메모리 가동률을 백분율로 표시 
 	- 현재 프로세서 가동률을 백분율로 표시
 	- 마지막 부팅 시간과 날짜 `who -b | awk '{print $3, $4}'`
-	- LVM이 활성화 되었는지 여부 `if [$(lsblk | grep -c lvm) > 0 ] then echo "yes" else echo "no"fi`
+	- LVM이 활성화 되었는지 여부 `lsblk | grep -c lvm | awk '{if ($1 > 0) print "yes"; else print "no"}'`
 	- 활성화된 연결 수 `ss | grep -c tcp`
 	- 서버를 사용하고 있는 유저 수 `users | wc -w`
 	- 서버의 IPv4 주소와 MAC (Media Access Control = 매체 접근 제어) 주소 ` `, `ip addr | grep ether | awk '{print $2}'`
