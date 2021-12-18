@@ -200,6 +200,6 @@
 
 - `select-editor` : 에디터 변경하는 명령어.
 - cron으로 wall을 실행하면 somewhere! -> tty1에서 wall 하면 위치 확인 가능 **todo: cron 시나리오 정리**
-
+- crontab -l, crontab -e
 - tail -f cat /var/log/syslog | grep CRON
 - `bash /hossong/hi.sh >> /home/hossong/fail.log 2>&1` 2는 표준 에러 의미, 1는 표준 출력 (&를 붙여주어야 1을 표준 출력으로 인식)
