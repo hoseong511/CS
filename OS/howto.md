@@ -27,7 +27,7 @@
 #### 4. 메모리 설정   
 ![image](https://user-images.githubusercontent.com/62678380/145516623-c4188a96-8e43-4fc8-81c7-6b02d37a56a6.png)
 
-#### 5. 해당 부분을 선택하고 만들기 (나중에 하드디스크를 추가해서 [LVM](https://github.com/hoseong511/CS/blob/mai/OS/lvm.md) 테스트)   
+#### 5. 해당 부분을 선택하고 만들기 (나중에 하드디스크를 추가해서 [LVM](https://hoseong511.github.io/CS/OS/lvm) 테스트)   
 ![image](https://user-images.githubusercontent.com/62678380/145516834-e2e380ba-0914-4e55-a746-db452b91f4f4.png)
 
 #### 6. virtual box에서만 사용하는 디스크 파일 형식 선택   
