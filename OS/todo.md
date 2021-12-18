@@ -91,7 +91,7 @@
 	- 루트 권한 비밀번호 또한 해당 규칙을 따라야 함.
 	- [https://nostressdev.tistory.com/9](https://nostressdev.tistory.com/9)
 	- `/etc/login.defs`에 비밀번호 관련 날짜를 설정할 수 있다. 다만 현재 존재하는 계정들에는 `chage`명령어로 바꿔주어야 한다.
-	- `passwd -e [user]` 하면 해당 유저의 암호가 만료됨.   
+	- `passwd`으로 비번 변경.   
 		```
 		qwer1234QWER
 		qwer1DF56789
@@ -197,3 +197,9 @@
 		- home2를 home으로 마운트
 	- LVM은 파티션 대신 볼륨이라는 단위로 저장 장치를 다룰 수 있으며, 물리 디스크를 볼륨 그룹으로 묶고 이것을 논리 볼륨으로 분할하여 관리한다.
 - GRUB(Grand Unified Bootloader)는 GNU하에서 개발된 멀티부트로더이다. 부트로더란 리눅스가 부팅되기까지 부팅의 전과정을 진행하는 부팅전문프로그램을 의미한다.
+
+- `select-editor` : 에디터 변경하는 명령어.
+- cron으로 wall을 실행하면 somewhere! -> tty1에서 wall 하면 위치 확인 가능 **todo: cron 시나리오 정리**
+- crontab -l, crontab -e
+- tail -f cat /var/log/syslog | grep CRON
+- `bash /hossong/hi.sh >> /home/hossong/fail.log 2>&1` 2는 표준 에러 의미, 1는 표준 출력 (&를 붙여주어야 1을 표준 출력으로 인식)
