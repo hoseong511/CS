@@ -27,39 +27,41 @@
 
 **4. 설치한 서비스 확인**
 - must be running at startup and its configuration has to be adapted for the project’s needs. AppArmor for Debian must be running at startup too.   
-→ SELinux(`sestatus`) 또는 AppArmor(`aa-status`) 작동 확인 
+   
+	→ SELinux(`sestatus`) 또는 AppArmor(`aa-status`) 작동 확인 
 <br>
 
 - SELinux와 AppArmor의 차이   
-<br>
-→ [LINK](https://hoseong511.github.io/CS/OS/apparmor)
+   
+	→ [LINK](https://hoseong511.github.io/CS/OS/apparmor)
 <br>
 
 - apt와 aptitude의 차이   **todo : apt vs aptitude 비교 자료 만들기**   
-<br>
-→ [LINK](https://hoseong511.github.io/CS/OS/apparmor)
+
+	→ [LINK](https://hoseong511.github.io/CS/OS/apparmor)
 <br>
 
 - A SSH service will be running on port 4242 only. For security reasons, it must not be possible to connect using SSH as root.   
-<br>
-→ 4242 포트 확인, root 접속 불가 확인(passwd 또는 비밀키 둘 다 확인)   
-→ [설치 및 설정한 과정](https://hoseong511.github.io/CS/OS/ssh)   
+
+	→ 4242 포트 확인, root 접속 불가 확인(passwd 또는 비밀키 둘 다 확인)   
+	→ [설치 및 설정한 과정](https://hoseong511.github.io/CS/OS/ssh)   
 <br>
 
 - The use of SSH will be tested during the defense by setting up a new account.   
-→ 계정 추가하고 접속해보기   
+
+	→ 계정 추가하고 접속해보기   
 <br>
 
 - You have to configure your operating system with the UFW firewall and thus leave only port 4242 open.   
-<br>
-→ UFW 작동확인 및 4242포트 열려있는지 확인(`ufw status`) **todo : ufw vs firewall(centos) 내용 공부하기**   
+
+	→ UFW 작동확인 및 4242포트 열려있는지 확인(`ufw status`) **todo : ufw vs firewall(centos) 내용 공부하기**   
 <br>
 
 
 **5. 계정관리**
 - The `hostname` of your virtual machine must be your login ending with 42 (e.g., wil42). You will have to modify this hostname during your evaluation.   
-<br>
-→ 로그인된 후 유저명@`hostname` 확인, hostname 바꾼 후 적용되었는지 확인   
+
+	→ 로그인된 후 유저명@`hostname` 확인, hostname 바꾼 후 적용되었는지 확인   
 <br>
 
 
