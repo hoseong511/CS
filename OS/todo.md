@@ -133,7 +133,8 @@
 	- 활성화된 연결 수
 	- 서버를 사용하고 있는 유저 수
 	- 서버의 IPv4 주소와 MAC (Media Access Control = 매체 접근 제어) 주소
-	- sudo로 실행된 커맨드의 수
+	- sudo로 실행된 커맨드의 수   
+		`grep -c "^sudo" .bash_history`
 9. 언어 설정 바꿔보기 (`dpkg-reconfigure locales`), 한글로 설치를 했더니 중간중간 깨지는 부분이 있다.
 
 - sshd 및 현재 시스템 내에서 열린 포트를 확인할 수 있다  lsof -i
