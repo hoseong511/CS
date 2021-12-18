@@ -127,13 +127,13 @@
 	- 물리 프로세서의 개수 `grep -c physical\ id /proc/cpuinfo`
 	- 가상 프로세서의 개수 `grep -c processor /proc/cpuinfo`
 	- 서버 내에서 사용가능한 램 가동률을 백분율로 표시 `free -m | grep Mem | awk '{ printf "%d/%dMB (%.2f%%)\n", $3, $2, ($3/$2 * 100.0) }'`
-	- 서버 내에서 사용가능한 메모리 가동률을 백분율로 표시 
+	- 서버 내에서 사용가능한 메모리 가동률을 백분율로 표시 `df -Bm | grep /LVMGroup | awk '{total += $2 ; used += $3;} END {g_total = total/1000; printf "%d/%dGb (%.2f%%) \n", used, g_total, used/total*100.0;}'`
 	- 현재 프로세서 가동률을 백분율로 표시
 	- 마지막 부팅 시간과 날짜 `who -b | awk '{print $3, $4}'`
 	- LVM이 활성화 되었는지 여부 `lsblk | grep -c lvm | awk '{if ($1 > 0) print "yes"; else print "no"}'`
 	- 활성화된 연결 수 `ss | grep -c tcp`
 	- 서버를 사용하고 있는 유저 수 `users | wc -w`
-	- 서버의 IPv4 주소와 MAC (Media Access Control = 매체 접근 제어) 주소 ` `, `ip addr | grep ether | awk '{print $2}'`
+	- 서버의 IPv4 주소와 MAC (Media Access Control = 매체 접근 제어) 주소 `ip addr | grep ether | awk '{printf ""$2}'`
 	- sudo로 실행된 커맨드의 수 `grep sudo /var/log/auth.log | grep -c COMMAND=`
 	<br>
 
