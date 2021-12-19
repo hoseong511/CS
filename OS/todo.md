@@ -211,3 +211,13 @@
 - hi : 
 - si
 - st
+## lighttpd, mariadb, php, wordpress
+- [https://www.atlantic.net/dedicated-server-hosting/how-to-install-wordpress-with-lighttpd-web-server-on-ubuntu-20-04/](https://www.atlantic.net/dedicated-server-hosting/how-to-install-wordpress-with-lighttpd-web-server-on-ubuntu-20-04/)
+여기 실패
+- how to install lighttpd - [https://www.osradar.com/install-lighttpd-debian-10/](https://www.osradar.com/install-lighttpd-debian-10/) 여기 잘됨!
+- how to install wordpress - [https://www.osradar.com/install-wordpress-with-lighttpd-debian-10/](https://www.osradar.com/install-wordpress-with-lighttpd-debian-10/)
+- root 디렉토리 바꾸기 `server.document-root = "여기에 수정"`
+
+## jenkins
+- install - [https://www.jenkins.io/doc/book/installing/linux/#debianubuntu](https://www.jenkins.io/doc/book/installing/linux/#debianubuntu)
+- 
