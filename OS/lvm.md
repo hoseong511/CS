@@ -1,13 +1,47 @@
-## 논리볼륨관리자 LVM(Logical Volume Manager)
+## **논리볼륨관리자 LVM(Logical Volume Manager)**
 LVM은 디스크공간을 자유롭게 추가하고 줄일 수 있게 만들어준다.   
 만약 파일 시스템에 추가적인 공간이 필요하다면, 새로 추가한 디스크 공간을 기존 LV(Logical Volume)에 확장시킬 수 있다.
 
 ### **LVM**
-LVM은 파티션과 하드디스크에 비해 저장 공간을 높은 차원에서 보게 한다.   
-![lvm](https://www.tecmint.com/wp-content/uploads/2014/07/Create-Logical-Volume-Storage.jpg)
+
 - 물리볼륨(Physical Volume) : 일반적으로 하드디스크 파티션이나 RAID 장치와 같이 하드디스크 파티션과 비슷하게 보이는 장치를 지칭함.
+
 - 논리볼륨(Logical Volume) : 여러 물리볼륨이 논리볼륨을 이룸. LVM에서 논리볼륨은 LVM을 사용하지 않는 시스템의 하드디스크 파티션과 유사함.
+
 - 볼륨그룹(Volume Group) : 논리볼륨이 모여서 볼륨그룹을 이룸. LVM에서 볼륨그룹은 LVM을 사용하지 않는 시스템의 물리적 하드디스크와 유사함.
+
+	![lvm](https://www.tecmint.com/wp-content/uploads/2014/07/Create-Logical-Volume-Storage.jpg)   
+
+	LVM은 파티션과 하드디스크에 비해 저장 공간을 높은 차원에서 보게 한다.   
+
+<br>
+
+### **LVM 명령어**
+- 생성
+	- pvcreate
+	- vgcreate
+	- lvcreate
+- 조회
+	- pvdisplay
+	- vgdisplay
+	- lvdisplay
+- 추가 / 변경
+	- vgextend, lvextend
+	- vgreduce (그룹 내에 멤버 제거)
+- 제거
+	- pvremove
+	- vgremove
+	- lvremove
+
+<br>
+
+### **기존 LV에 용량추가하기**
+기존에 사용중이던 lvm 타입의 저장소가 가득 찼을 경우, 새롭게 추가한 저장소를 기존 LV 저장소에 연결하고 싶을 때   
+[![asciicast](https://asciinema.org/a/J0T38ADtzxKHwpJ6R3Wz4ex33.svg)](https://asciinema.org/a/J0T38ADtzxKHwpJ6R3Wz4ex33)   
+- `fdisk -l`로 확인해보면 기존 저장소에 용량이 늘었음을 확인할 수 있다.
+- 이것은 따로 마운트를 하는 과정이 아니라 그런지.. 파일시스템 테이블(/etc/fstab)에 적어주지 않아도 된다.
+
+<br>
 
 ### **버추얼 박스에서 저장소 추가하기**
 - 디스크 모양 버튼 클릭   
@@ -29,37 +63,14 @@ LVM은 파티션과 하드디스크에 비해 저장 공간을 높은 차원에�
 
 - 저장소 마운트하기
 	- 파티션 -> 파일시스템 포맷 -> 마운트   
-	[![asciicast](https://asciinema.org/a/893GfUvLCTdDec0hSg230L6wk.svg)](https://asciinema.org/a/893GfUvLCTdDec0hSg230L6wk)
+
+	[![asciicast](https://asciinema.org/a/893GfUvLCTdDec0hSg230L6wk.svg)](https://asciinema.org/a/893GfUvLCTdDec0hSg230L6wk)   
+
 	- `vim /etc/fstab`에 저장소를 등록해주어야 재부팅이 되어도 저장소가 마운트되어있다.   
 	```sh
 	# <file system> <mount point>   <type>  <options>       <dump>  <pass>
 	/dev/sdb        /sdb1   ext4    defaults        1       2
 	```   
-
-### **LVM 사용해보기**
-- 생성
-	- pvcreate
-	- vgcreate
-	- lvcreate
-- 조회
-	- pvdisplay
-	- vgdisplay
-	- lvdisplay
-- 추가 / 변경
-	- vgextend, lvextend
-	- vgreduce (그룹 내에 멤버 제거)
-- 제거
-	- pvremove
-	- vgremove
-	- lvremove
-
-### **기존 LV에 용량추가하기**
-기존에 사용중이던 lvm 타입의 저장소가 가득 찼을 경우, 새롭게 추가한 저장소를 기존 LV 저장소에 연결하고 싶을 때   
-[![asciicast](https://asciinema.org/a/J0T38ADtzxKHwpJ6R3Wz4ex33.svg)](https://asciinema.org/a/J0T38ADtzxKHwpJ6R3Wz4ex33)   
-- 중간에 섹터를 나눈 이유는 파티션이 되는 것을 확인하기 위함이었다.
-
-- `fdisk -l`로 확인해보면 기존 저장소에 용량이 늘었음을 확인할 수 있다.
-- 이것은 따로 마운트를 하는 과정이 아니라 그런지.. 파일시스템 테이블(/etc/fstab)에 적어주지 않아도 된다.
 
 ### **Trouble**
 - OS를 설치하면서 만들었던 암호화된 LVM 디스크를 지우고, 재부팅 했더니 디스크 찾을 수 없는 문제 발생
