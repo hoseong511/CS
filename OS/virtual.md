@@ -25,4 +25,4 @@
 ### **Reference**
 - [https://www.redhat.com/ko/topics/virtualization/what-is-virtualization](https://www.redhat.com/ko/topics/virtualization/what-is-virtualization)
 
-[^Hypervisor]: 가상 머신을 생성하고 구동하는 소프트웨어이다. 가상 머신 모니터라고도 불리는 하이퍼바이저는 하이퍼바이저 운영 체제와 가상 머신의 리소스를 분리해 VM의 생성과 관리를 지원.
+[^Hypervisor]: 가상 머신을 생성하고 구동하는 소프트웨어. 가상 머신 모니터라고도 불리는 하이퍼바이저는 하이퍼바이저 운영 체제와 가상 머신의 리소스를 분리해 VM의 생성과 관리를 지원.

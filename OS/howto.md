@@ -4,7 +4,7 @@
 - At least 8GB of RAM installed
 - At least 10GB of free disk space
 - Internet connectivity
-- Hardware virtualization VT-x/VT-d or AMD-v enabled from the BIOS of your motherboard
+- Hardware virtualization [VT-x/VT-d](https://hoseong511.github.io/CS/OS/virtual) or AMD-v enabled from the BIOS of your motherboard
 
 ### **Versions**
 - debian CD image : [debian-10.11.0-amd64-netinst.iso](https://www.debian.org/CD/netinst/index.ko.html)
@@ -14,20 +14,22 @@
 
 ### **Install**
 #### 1. [CPU](https://hoseong511.github.io/CS/OS/cpu)확인 후, 데비안 [이미지 선택](https://cdimage.debian.org/cdimage/archive/). ([해당 버전을 사용한 이유](https://ko.wikipedia.org/wiki/%EB%8D%B0%EB%B9%84%EC%95%88#%EB%B0%B0%ED%8F%AC_%EC%97%AD%EC%82%AC))   
-![image](https://user-images.githubusercontent.com/62678380/145513483-a82d4334-2da9-4d74-99da-c79cb9d68318.png)
+![image](https://user-images.githubusercontent.com/62678380/145513483-a82d4334-2da9-4d74-99da-c79cb9d68318.png)   
+
+[xfce](https://ko.wikipedia.org/wiki/Xfce)는 GUI.
 
 #### 2. 이미지를 다운 받았으면 간단히 확인해보자. (`shasum`)   
 ![image](https://user-images.githubusercontent.com/62678380/145515099-3e28e2ba-621e-49c8-8e24-5f9a37228c39.png)
 	   
-`shasum -a 512 debian-10.11.0-amd64-netinst.iso
-`
+`shasum -a 512 debian-10.11.0-amd64-netinst.iso`   
+[sha](https://ko.wikipedia.org/wiki/SHA)는 secure hash algorithm의 줄임말로 암호학적 해시 함수다.
 #### 3. virtual box에서 새로 만들기 후, 이름과 이미지의 종류/버전을 선택 다음.   
 ![image](https://user-images.githubusercontent.com/62678380/145515981-da1dcb54-4cc8-4cb6-b71a-6cfca30a51af.png)
 	
 #### 4. 메모리 설정   
 ![image](https://user-images.githubusercontent.com/62678380/145516623-c4188a96-8e43-4fc8-81c7-6b02d37a56a6.png)
 
-#### 5. 해당 부분을 선택하고 만들기 (나중에 하드디스크를 추가해서 [LVM](https://hoseong511.github.io/CS/OS/lvm) 테스트)   
+#### 5. 해당 부분을 선택하고 만들기 (나중에 하드디스크를 추가해서 [LVM](https://hoseong511.github.io/CS/OS/lvm#%EA%B8%B0%EC%A1%B4-lv%EC%97%90-%EC%9A%A9%EB%9F%89%EC%B6%94%EA%B0%80%ED%95%98%EA%B8%B0) 테스트)   
 ![image](https://user-images.githubusercontent.com/62678380/145516834-e2e380ba-0914-4e55-a746-db452b91f4f4.png)
 
 #### 6. virtual box에서만 사용하는 디스크 파일 형식 선택   

@@ -17,7 +17,7 @@
 GUI|CLI
 :------------:|:------------:
 ![image](https://user-images.githubusercontent.com/62678380/146662111-abd8aff4-06ce-4ae3-92ba-9f83eaadf168.png)|![image](https://user-images.githubusercontent.com/62678380/146662144-da48e92a-e63e-481c-b5c8-fe78ce3f9d46.png)
-입출력을 그래픽 화면으로 사용자와 컴퓨터 상호작용 | 입출력을 텍스트 화면으로 사용자와 컴퓨터 상호 작용
+입출력을 그래픽 화면으로 사용자와 컴퓨터 상호작용 | 입출력을 텍스트 화면으로 사용자와 컴퓨터 상호작용
 
 - you will install the minimum of services.   
 
@@ -31,16 +31,11 @@ GUI|CLI
 
 ### **2. 데비안과 센토스**
 
-데비안(Debian) | 센토스(CentOS)
-:------------:|:------------:| 
-![debian](http://wiki.hash.kr/images/3/33/%EB%8D%B0%EB%B9%84%EC%95%88_%EB%A1%9C%EA%B3%A0.png)|![centos](https://w.namu.la/s/ad43f26fa8a71fb056964e32b2a750fec0f65957ee14b585398356e26daa669c3a5a89283f2f6a023c3ced9d2a3af2f220f5e54c64b01018f4b1f8ec131e0f447e15eecaff8cea04f2f1706ba84c489f51188d9e343e95557d0597f8ff0218ed)
+- [센토스 vs 데비안](https://hoseong511.github.io/CS/OS/debian)
 
 - You must choose as an operating system either the latest stable version of Debian   
 
 	→ latest stable vsrsion([데비안](https://ko.wikipedia.org/wiki/%EB%8D%B0%EB%B9%84%EC%95%88#%EB%B0%B0%ED%8F%AC_%EC%97%AD%EC%82%AC), [센토스](https://ko.wikipedia.org/wiki/CentOS#%EB%B2%84%EC%A0%84_%EB%82%B4%EC%97%AD)) 및 `cat /etc/os-release` 확인
-	<br>
-
-- [데비안 vs 센토스](https://hoseong511.github.io/CS/OS/debian)
 	<br>
 
 <br>
@@ -50,13 +45,11 @@ GUI|CLI
 
 	→ `lsblk`로 확인   	
 
-	![image](https://user-images.githubusercontent.com/62678380/146661137-aa46c0b8-0bda-4307-aa53-5f559f0b87f5.png)   
+	→ [lvm?](https://hoseong511.github.io/CS/OS/lvm)
 
-	sda1에 부트로더설치, 
-	
 	→ [파티셔닝 과정](https://hoseong511.github.io/CS/OS/howto#21-%EB%94%94%EC%8A%A4%ED%81%AC-%EC%84%A4%EC%A0%95--%ED%8C%8C%ED%8B%B0%EC%85%98---%EC%95%94%ED%98%B8%ED%99%94%EB%90%9C-lvm-%EC%84%A0%ED%83%9D)
 
-	→ [lvm?](https://hoseong511.github.io/CS/OS/lvm)
+	
 
 	<br>
 
@@ -81,7 +74,7 @@ GUI|CLI
 - A SSH service will be running on port 4242 only. For security reasons, it must not be possible to connect using SSH as root.   
 
 	→ 4242 포트 확인, root 접속 불가 확인(passwd 또는 비밀키 둘 다 확인)   
-	→ [설치 및 설정한 과정](https://hoseong511.github.io/CS/OS/ssh)   
+	→ [설치 및 설정 과정](https://hoseong511.github.io/CS/OS/ssh)   
 <br>
 
 - The use of SSH will be tested during the defense by setting up a new account.   

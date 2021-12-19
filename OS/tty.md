@@ -30,6 +30,11 @@
 - 호스트 입장에서 가짜 터미널임
 <br>
 
+### **Trouble**
+- cli에서 gui로 돌아오기 : `service lightdm restart`
+
+<br>
+
 ### **Reference**
 - [https://www.howtogeek.com/428174/what-is-a-tty-on-linux-and-how-to-use-the-tty-command/](https://www.howtogeek.com/428174/what-is-a-tty-on-linux-and-how-to-use-the-tty-command/)
 - [https://itsfoss.com/what-is-tty-in-linux/](https://www.howtogeek.com/428174/what-is-a-tty-on-linux-and-how-to-use-the-tty-command/)

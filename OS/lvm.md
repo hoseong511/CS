@@ -91,8 +91,9 @@ LVM은 디스크공간을 자유롭게 추가하고 줄일 수 있게 만들어�
 	-> `vgreduce --removemissing [vg]`
 
 ### **Reference**
-- [http://coffeenix.net/doc/lg/issue84/vinayak.html](http://coffeenix.net/doc/lg/issue84/vinayak.html)
-- [https://www.tecmint.com/create-lvm-storage-in-linux/](https://www.tecmint.com/create-lvm-storage-in-linux/)
-- LVM 명령어 (PV, VG, LV) [link](https://closed0402.tistory.com/103)
-- LVM 확장/용량 추가 [link](https://www.juntoday.com/375)
-- swap 및 lvm 생성/확장/제거 시나리오 [link](https://doctorlinux.tistory.com/12)
+- LVM1 - [http://coffeenix.net/doc/lg/issue84/vinayak.html](http://coffeenix.net/doc/lg/issue84/vinayak.html)
+- LVM2 - [https://www.tecmint.com/create-lvm-storage-in-linux/](https://www.tecmint.com/create-lvm-storage-in-linux/)
+- LVM 명령어 (PV, VG, LV) - [https://closed0402.tistory.com/103](https://closed0402.tistory.com/103)
+- LVM 확장/용량 추가 - [https://www.juntoday.com/375](https://www.juntoday.com/375)
+- swap 및 lvm 생성/확장/제거 시나리오 - [https://doctorlinux.tistory.com/12](https://doctorlinux.tistory.com/12)
+- How to create a physical volume in Linux using LVM - [https://www.redhat.com/sysadmin/create-physical-volume](https://www.redhat.com/sysadmin/create-physical-volume)

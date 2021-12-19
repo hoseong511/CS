@@ -128,12 +128,12 @@
 	- 가상 프로세서의 개수 `grep -c processor /proc/cpuinfo`
 	- 서버 내에서 사용가능한 램 가동률을 백분율로 표시 `free -m | grep Mem | awk '{ printf "%d/%dMB (%.2f%%)\n", $3, $2, ($3/$2 * 100.0) }'`
 	- 서버 내에서 사용가능한 메모리 가동률을 백분율로 표시 `df -Bm | grep /LVMGroup | awk '{total += $2 ; used += $3;} END {g_total = total/1000; printf "%d/%dGb (%.2f%%) \n", used, g_total, used/total*100.0;}'`
-	- 현재 프로세서 가동률을 백분율로 표시
+	- 현재 프로세서 가동률을 백분율로 표시 `top -bn1 | grep Cpu | awk '{ print (100-$4) "%"}' FS=','`
 	- 마지막 부팅 시간과 날짜 `who -b | awk '{print $3, $4}'`
 	- LVM이 활성화 되었는지 여부 `lsblk | grep -c lvm | awk '{if ($1 > 0) print "yes"; else print "no"}'`
-	- 활성화된 연결 수 `ss | grep -c tcp`
+	- 활성화된 연결 수 `ss | grep -c tcp | awk '{print $1 " ESTABLISHED"}'`
 	- 서버를 사용하고 있는 유저 수 `users | wc -w`
-	- 서버의 IPv4 주소와 MAC (Media Access Control = 매체 접근 제어) 주소 `ip addr | grep ether | awk '{printf ""$2}'`
+	- 서버의 IPv4 주소와 MAC (Media Access Control = 매체 접근 제어) 주소 `ip addr | grep link/ether | awk -v "ip=$(hostname -I)" '{printf "IP %s (%s)\n", ip, $2}'`
 	- sudo로 실행된 커맨드의 수 `grep sudo /var/log/auth.log | grep -c COMMAND=`
 	<br>
 
@@ -203,3 +203,11 @@
 - crontab -l, crontab -e
 - tail -f cat /var/log/syslog | grep CRON
 - `bash /hossong/hi.sh >> /home/hossong/fail.log 2>&1` 2는 표준 에러 의미, 1는 표준 출력 (&를 붙여주어야 1을 표준 출력으로 인식)
+
+- us, user : time running un-niced user processes 사용자 영역에서 사용한 cpu 시간
+- sy, system : time running kernel processes system 영역에서 사용된 cpu 시간
+- ni, nice : time running niced user processes 프로세스 우선순위 따라 사용된 cpu 시간
+- wa, IO-wait : 다른 통신으로 인해 cpu 작업이 일시적으로 대기하는데 소비된 cpu 시간
+- hi : 
+- si
+- st
