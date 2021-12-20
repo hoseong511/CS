@@ -71,6 +71,21 @@
 	# remote -> local
 	scp -i [identity file] -P [port] [user@][host]:[target file] [/path]
 	```
+
+### SFTP
+- 보안 ftp
+
+- `sftp -i [인증키파일] -P [포트번호] [user@][host]`
+
+- ls : 게스트 파일목록, !ls : 호스트 파일목록
+
+- get : 게스트 파일 다운로드, put : 호스트 파일 업로드
+
+	![image](https://user-images.githubusercontent.com/62678380/146725196-6ccdb0f6-cecc-4384-bd77-88f203271b90.png)
+
+- sftp 이용 - [https://thebook.io/006718/part02/ch07/05/02/](https://thebook.io/006718/part02/ch07/05/02/)
+
+
 ### **Reference**
 - [https://ko.wikipedia.org/wiki/%EC%8B%9C%ED%81%90%EC%96%B4_%EC%85%B8](https://ko.wikipedia.org/wiki/%EC%8B%9C%ED%81%90%EC%96%B4_%EC%85%B8)
 - [https://ko.wikipedia.org/wiki/%ED%85%94%EB%84%B7](https://ko.wikipedia.org/wiki/%ED%85%94%EB%84%B7)
