@@ -98,6 +98,7 @@
 		qwer1234QWER
 		````
 	<br>
+	- 모듈 `pam_pwquality`에 대해서 자세히 보기 - [https://www.sudo.ws/docs/man/1.8.15/sudoers.man/](https://www.sudo.ws/docs/man/1.8.15/sudoers.man/)   
 
 
 1. sudo? sudo strict rules? 
@@ -109,9 +110,8 @@
 	- sudo 권한으로 이용할 수 있는 폴더 경로는 반드시 제한
 		- secure_path를 설정하는 이유 [link](https://www.tuwlab.com/ece/24044)
 	- [https://ko.linux-console.net/?p=1985](https://ko.linux-console.net/?p=1985)
-	- [https://www.sudo.ws/docs/man/1.8.15/sudoers.man/](https://www.sudo.ws/docs/man/1.8.15/sudoers.man/)   
-	```
-	Defaults        secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin"
+	```sh
+	Defaults        secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin" #sudo 실행 시 만들어진 샌드박스 안에서 실행하게 하는 기능. 트로이목마 같이 path설정을 바꿔버리는 악성코드에 대해 예방이 가능하다. 즉, path를 바꾸는 코드가 심어진다면 실존하지 않는 샌드박스 경로에 심어져서 예방이 가능해진다는 말이다.
 	Defaults        passprompt="비밀번호를 묻는다"
 	Defaults        badpass_message="비밀번호 틀림 다시 시도!"
 	Defaults        requiretty
@@ -202,7 +202,13 @@
 - cron으로 wall을 실행하면 somewhere! -> tty1에서 wall 하면 위치 확인 가능 **todo: cron 시나리오 정리**
 - crontab -l, crontab -e
 - tail -f cat /var/log/syslog | grep CRON
-- `bash /hossong/hi.sh >> /home/hossong/fail.log 2>&1` 2는 표준 에러 의미, 1는 표준 출력 (&를 붙여주어야 1을 표준 출력으로 인식)
+- `bash /hossong/hi.sh 1>> /home/hossong/excute.log 2>> /home/hossong/fail.log` 2는 표준 에러 의미, 1는 표준 출력 (&를 붙여주어야 1을 표준 출력으로 인식) 
+	- 표준 출력 의미인 1이 생략되어있음.
+	- 위와 같이 하면 정상이면 excute.log에 기록되고, 에러면 fail.log에 기록됨.
+	- `bash /hossong/hi.sh 1 > /dev/null 2>&1` : >&1은 표준출력으로 리다이렉션함. 즉, 이렇게 사용하면 에러에 대한 처리도 됨. 앰퍼샌드(&) + 숫자는 파일디스크립터를 의미하게 만듦.
+	- 그렇다면 '왜 &2>&1 로 사용하지 않는거지?'에 대한 답변 [링크](https://stackoverflow.com/questions/818255/in-the-shell-what-does-21-mean). `command & 까지 인식 그리고 2>&1`
+	- ``
+	- [참고](https://blogger.pe.kr/369)
 
 - us, user : time running un-niced user processes 사용자 영역에서 사용한 cpu 시간
 - sy, system : time running kernel processes system 영역에서 사용된 cpu 시간
@@ -211,6 +217,9 @@
 - hi : 
 - si
 - st
+
+## 설치 화면에서 파티션, LV 만들기
+
 ## lighttpd, mariadb, php, wordpress
 - [https://www.atlantic.net/dedicated-server-hosting/how-to-install-wordpress-with-lighttpd-web-server-on-ubuntu-20-04/](https://www.atlantic.net/dedicated-server-hosting/how-to-install-wordpress-with-lighttpd-web-server-on-ubuntu-20-04/)
 여기 실패
