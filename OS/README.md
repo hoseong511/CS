@@ -29,9 +29,9 @@ GUI|CLI
 
 <br>
 
-### **2. 데비안과 센토스**
+### **2. 센토스와 데비안**
 
-- [센토스 vs 데비안](https://hoseong511.github.io/CS/OS/debian)
+- [센토스, 데비안](https://hoseong511.github.io/CS/OS/debian)
 
 - You must choose as an operating system either the latest stable version of Debian   
 
@@ -48,8 +48,6 @@ GUI|CLI
 	→ [lvm?](https://hoseong511.github.io/CS/OS/lvm)
 
 	→ [파티셔닝 과정](https://hoseong511.github.io/CS/OS/howto#21-%EB%94%94%EC%8A%A4%ED%81%AC-%EC%84%A4%EC%A0%95--%ED%8C%8C%ED%8B%B0%EC%85%98---%EC%95%94%ED%98%B8%ED%99%94%EB%90%9C-lvm-%EC%84%A0%ED%83%9D)
-
-	
 
 	<br>
 
@@ -106,6 +104,8 @@ cron	| 크론테이블에 지정되어 있는 대로 특정 프로그램을 실�
 	→ 로그인된 후 유저명@`hostname` 확인, hostname 바꾼 후 적용되었는지 확인   
 	<br>
 
+- 현재 hossong 이라는 유저가 있는지 확인, 해당 유저가 그룹 `user42`, `sudo`에 있는지 확인
+
 - You have to implement a strong password policy.
 
 	- Your password has to expire every 30 days.
@@ -131,15 +131,15 @@ cron	| 크론테이블에 지정되어 있는 대로 특정 프로그램을 실�
 
 	→ 규칙 위반 비번 :   
 	```
-		qwer1234(10자 미만),   
+		1(10자 미만),   
 
-		qwert12345(대문자x),   
+		qwert12345asdf(대문자x)  바뀌는거 확인 →  qwert12345ASDF
 
-		qqqqw12345(같은문자3자까지하용),   
+		qqqqW12345(같은문자3자까지하용)  바뀌는거 확인 →  qqqW123asdasSF5
 
-		hossong12345(유저명x),   
+		hossong12345(유저명x)   바뀌는거 확인 →  hoss123qweQwe
 
-		Qwert12678900(7자이상바뀌지않음, 바뀌는거 확인 → Qwert1678900a) 
+		4747CZ3qweQwe(7자이상바뀌지않음) 바뀌는거 확인 → 4747CZXqweQwe
 	```
 	<br>
 
@@ -190,3 +190,4 @@ cron	| 크론테이블에 지정되어 있는 대로 특정 프로그램을 실�
 
 - 10분 마다 잘 작동하는지, 해당 작업 종료까지 할 수 있는지? 
 	→ 메세지 보내는 계정이 `root`인지 확인
+- ss -tnulp

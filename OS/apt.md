@@ -1,6 +1,7 @@
 ## **APT와 aptitude**
+
 apt | aptitude
-:--:| :--:
+:--:|:--:
 ![image](https://user-images.githubusercontent.com/62678380/146716762-e1a8165d-4138-4753-87a5-b7f915afaba7.png)|![image](https://user-images.githubusercontent.com/62678380/146716663-d775097c-264f-4e39-b5c1-a8a6a82af56e.png)
 텍스트 전용 대화형 UI| 그래픽이 추가된 대화형 UI
 

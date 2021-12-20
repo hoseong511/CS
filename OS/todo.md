@@ -98,7 +98,7 @@
 		qwer1234QWER
 		````
 	<br>
-	- 모듈 `pam_pwquality`에 대해서 자세히 보기 - [https://www.sudo.ws/docs/man/1.8.15/sudoers.man/](https://www.sudo.ws/docs/man/1.8.15/sudoers.man/)   
+	- 모듈 `pam_cracklib`에 대해서 자세히 보기 - [https://linux.die.net/man/8/pam_cracklib](https://linux.die.net/man/8/pam_cracklib)   
 
 
 1. sudo? sudo strict rules? 
