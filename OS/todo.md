@@ -134,7 +134,7 @@
 	- 활성화된 연결 수 `ss | grep -c tcp | awk '{print $1 " ESTABLISHED"}'`
 	- 서버를 사용하고 있는 유저 수 `users | wc -w`
 	- 서버의 IPv4 주소와 MAC (Media Access Control = 매체 접근 제어) 주소 `ip addr | grep link/ether | awk -v "ip=$(hostname -I)" '{printf "IP %s (%s)\n", ip, $2}'`
-	- sudo로 실행된 커맨드의 수 `grep sudo /var/log/auth.log | grep -c COMMAND=`
+	- sudo로 실행된 커맨드의 수 `grep sudo /var/log/auth.log | grep -c COMMAND= | awk '{print $1 cmd}'` 
 	<br>
 
 9. 언어 설정 바꿔보기 (`dpkg-reconfigure locales`), 한글로 설치를 했더니 중간중간 깨지는 부분이 있다.
@@ -217,7 +217,7 @@
 - hi : 
 - si
 - st
-
+- sudo su 막기 - [https://forum.ubuntu-kr.org/viewtopic.php?t=27631](https://forum.ubuntu-kr.org/viewtopic.php?t=27631)
 ## 설치 화면에서 파티션, LV 만들기
 
 ## lighttpd, mariadb, php, wordpress
