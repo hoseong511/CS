@@ -224,9 +224,35 @@
 - [https://www.atlantic.net/dedicated-server-hosting/how-to-install-wordpress-with-lighttpd-web-server-on-ubuntu-20-04/](https://www.atlantic.net/dedicated-server-hosting/how-to-install-wordpress-with-lighttpd-web-server-on-ubuntu-20-04/)
 여기 실패
 - how to install lighttpd - [https://www.osradar.com/install-lighttpd-debian-10/](https://www.osradar.com/install-lighttpd-debian-10/) 여기 잘됨!
+
 - how to install wordpress - [https://www.osradar.com/install-wordpress-with-lighttpd-debian-10/](https://www.osradar.com/install-wordpress-with-lighttpd-debian-10/)
+
+- mariadb랑 mysql이랑 같음 -> apt install mariadb-server
 - root 디렉토리 바꾸기 `server.document-root = "여기에 수정"`
 
 ## jenkins
 - install - [https://www.jenkins.io/doc/book/installing/linux/#debianubuntu](https://www.jenkins.io/doc/book/installing/linux/#debianubuntu)
 - 
+
+
+## haproxy 로드 밸런싱 기능 이용
+- L4, L7 과 같은 하드웨어 로드밸런스를 대체하기 위한 오픈소스 소프트웨어. 
+
+- nginx와 다른 점은 1. 웹서버 없이 오직 로드밸런싱 기능만 2. 특정 API에 접근하여 서버 상태 점검하는 헬스 체크 기능 보유
+
+- haproxy 한글 설명 - [https://leffept.tistory.com/309](https://leffept.tistory.com/309)
+
+- haproxy 사용법 - [https://techexpert.tips/ko/%ED%95%98%ED%94%84%EB%A1%9D%EC%8B%9C/%EC%9A%B0%EB%B6%84%ED%88%AC-%EB%A6%AC%EB%88%85%EC%8A%A4%EC%97%90-haproxy-%EC%84%A4%EC%B9%98/](https://techexpert.tips/ko/%ED%95%98%ED%94%84%EB%A1%9D%EC%8B%9C/%EC%9A%B0%EB%B6%84%ED%88%AC-%EB%A6%AC%EB%88%85%EC%8A%A4%EC%97%90-haproxy-%EC%84%A4%EC%B9%98/)
+
+- haproxy vs nginx 비교 블로그(한글) - [https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=hanajava&logNo=221677116693](https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=hanajava&logNo=221677116693)
+
+- haproxy vs nginx 비교 stackoverflow - [https://stackoverflow.com/questions/21173496/haproxy-vs-nginx#:~:text=haproxy%20is%20a%20%22load%20balancer,server%20then%20haproxy%20is%20enough.](https://stackoverflow.com/questions/21173496/haproxy-vs-nginx#:~:text=haproxy%20is%20a%20%22load%20balancer,server%20then%20haproxy%20is%20enough.)
+
+- revese proxy ? - [https://today-hello.tistory.com/109](https://today-hello.tistory.com/109)
+	- 쉽게 말해 서버를 대신하는 녀석을 리버스 프록시, 클라이언트(일반유저)를 대신하는 녀석을 프록시
+
+## python flask
+- flask - [https://wings2pc.tistory.com/entry/%EC%9B%B9-%EC%95%B1%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-%ED%8C%8C%EC%9D%B4%EC%8D%AC-%ED%94%8C%EB%9D%BC%EC%8A%A4%ED%81%ACPython-Flask-%EC%84%A4%EC%B9%98-%EB%B0%8F-%EC%9B%B9-%EC%95%A0%ED%94%8C%EB%A6%AC%EC%BC%80%EC%9D%B4%EC%85%98Web-Application-%EC%8B%9C%EC%9E%91](https://wings2pc.tistory.com/entry/%EC%9B%B9-%EC%95%B1%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-%ED%8C%8C%EC%9D%B4%EC%8D%AC-%ED%94%8C%EB%9D%BC%EC%8A%A4%ED%81%ACPython-Flask-%EC%84%A4%EC%B9%98-%EB%B0%8F-%EC%9B%B9-%EC%95%A0%ED%94%8C%EB%A6%AC%EC%BC%80%EC%9D%B4%EC%85%98Web-Application-%EC%8B%9C%EC%9E%91)
+	- python3 app.py로 실행을 해야 `app.run(host='')` 부분이 실행된다.
+	- 
+- nohup flask !! - [https://imsoncod.tistory.com/17](https://imsoncod.tistory.com/17)

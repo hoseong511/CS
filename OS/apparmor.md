@@ -66,5 +66,7 @@ $ sudo journalctl -fx
 ### **Reference**
 - [https://wiki.apparmor.net/](https://wiki.apparmor.net/)
 - [https://archive.md/VbER4](https://archive.md/VbER4)
+- apparmor 프로파일 만들기 - [https://nostressdev.tistory.com/5?category=868783](https://nostressdev.tistory.com/5?category=868783)
+- apparmor 비활성화 활성화 - [https://www.linuxcapable.com/ko/how-to-enable-disable-apparmor-on-ubuntu-20-04/](https://www.linuxcapable.com/ko/how-to-enable-disable-apparmor-on-ubuntu-20-04/)
 
 [^LIDS]: 리눅스 커널에 강제적 접근 통제(MAC)를 구현함으로써 커널 보안을 강화하는 커널 관련 관리 툴이다. LIDS가 선택된 파일 접근, 모든 시스템 네트워크 관리 동작, 메모리 그리고 입출력 접근 등을 보안 정책에 따라 제한한다. 심지어 루트 계정도 보안 정책에 의거 접근이 불가능 할 수 있다.
