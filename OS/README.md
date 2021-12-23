@@ -75,7 +75,7 @@ cron	| 크론테이블에 지정되어 있는 대로 특정 프로그램을 실�
 	→ [LINK](https://hoseong511.github.io/CS/OS/apparmor)
 <br>
 
-- apt와 aptitude의 차이   **todo : apt vs aptitude 비교 자료 만들기**   
+- apt와 aptitude의 차이   
 	![image](https://user-images.githubusercontent.com/62678380/146716325-38dee88e-e280-4b7b-9f38-cb3a3fa5de7b.png)
 	→ [LINK](https://hoseong511.github.io/CS/OS/apt)
 <br>
@@ -126,7 +126,8 @@ cron	| 크론테이블에 지정되어 있는 대로 특정 프로그램을 실�
 
 - 계정이 위 규칙을 따르고 있는지?
 
-	→ 기간 규칙 확인(`/etc/login.def` ,`chage -l 유저명`) **todo: chage 로 기간규칙 바꾸기와 /etc/login.def에 규칙 설정하는 내용 및 이외 규칙 정리**   
+	→ 기간 규칙 확인(`/etc/login.def` ,`chage -l 유저명`)   
+	
 	→ 위 규칙 적용 비번 root : Qwert12345qwe, hossong : Qwert12345qwe    
 
 	→ 규칙 위반 비번 :   
