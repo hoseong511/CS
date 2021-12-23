@@ -214,9 +214,9 @@
 - sy, system : time running kernel processes system 영역에서 사용된 cpu 시간
 - ni, nice : time running niced user processes 프로세스 우선순위 따라 사용된 cpu 시간
 - wa, IO-wait : 다른 통신으로 인해 cpu 작업이 일시적으로 대기하는데 소비된 cpu 시간
-- hi : 
-- si
-- st
+- hi : 하드웨어 인터럽트에 사용되는 CPU 사용률
+- si : 소프트웨어 인터럽트에 사용되는 CPU 사용률
+- st : CPU를 VM에서 사용하여 대기하는 CPU 비율
 - sudo su 막기 - [https://forum.ubuntu-kr.org/viewtopic.php?t=27631](https://forum.ubuntu-kr.org/viewtopic.php?t=27631)
 ## 설치 화면에서 파티션, LV 만들기
 
