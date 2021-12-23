@@ -122,6 +122,10 @@ cron	| 크론테이블에 지정되어 있는 대로 특정 프로그램을 실�
 
 	- Of course, your root password has to comply with this policy.
 
+	- 비밀번호 만료 메시지 알림 7일, 만료 기간 30일, 변경 시, 최소 2일 후 변경
+
+	- 적어도 10자, 영 대/소 문자 및 숫자 적어도 1자 이상, 이전 비밀번호에서 적어도 7자 이상 변경, 유저명 포함 x, 관리자 계정도 비밀번호 정책 적용
+
 	<br>
 
 - 계정이 위 규칙을 따르고 있는지?
@@ -156,12 +160,14 @@ cron	| 크론테이블에 지정되어 있는 대로 특정 프로그램을 실�
 
 	- For security reasons too, the paths that can be used by sudo must be restricted. 
 
+	- sudo 비번 틀릴 시 3번 기회, 비번 틀릴 시 내가 작성한 메시지 알림, 명령어 입/출력 로그, tty 모드 확인, 보안 모드 적용
+
 	<br>
 
 <br>
 
 ### **6. 서버 모니터링**
-- cron? 10분 마다 작동되고 오류 발생 처리하기 **todo : 크론 실행 시 오류 처리 `2 > /dev/null`
+- cron? 10분 마다 작동되고 오류 발생 처리하기
 
 	- 운영체제의 아키텍쳐와 커널 버전 
 
