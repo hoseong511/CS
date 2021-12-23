@@ -3,17 +3,23 @@
 <br>
 
 ## **TOC**
-**1. [GUI와 CLI](#1-GUI와-CLI)**   
-**2. [센토스와 데비안](#2-센토스와-데비안)**   
-**3. [파티션](#3-파티션)**   
-**4. [서비스](#4-서비스)**   
-**5. [계정 관리](#5-계정-관리)**   
-**6. [서버 모니터링](#6-서버-모니터링)**   
+**1. [센토스와 데비안](#2-센토스와-데비안)**   
+**2. [파티션](#3-파티션)**   
+**3. [서비스](#4-서비스)**   
+**4. [계정 관리](#5-계정-관리)**   
+**5. [서버 모니터링](#6-서버-모니터링)**   
 
 <br>
 
-### **1. GUI와 CLI** 
+### **1. 센토스와 데비안**
 
+- [센토스, 데비안](https://hoseong511.github.io/CS/OS/debian)
+
+- You must choose as an operating system either the latest stable version of Debian   
+
+	→ latest stable vsrsion([데비안](https://ko.wikipedia.org/wiki/%EB%8D%B0%EB%B9%84%EC%95%88#%EB%B0%B0%ED%8F%AC_%EC%97%AD%EC%82%AC), [센토스](https://ko.wikipedia.org/wiki/CentOS#%EB%B2%84%EC%A0%84_%EB%82%B4%EC%97%AD)) 및 `cat /etc/os-release` 확인
+	
+   
 GUI|CLI
 :------------:|:------------:
 ![image](https://user-images.githubusercontent.com/62678380/146662111-abd8aff4-06ce-4ae3-92ba-9f83eaadf168.png)|![image](https://user-images.githubusercontent.com/62678380/146662144-da48e92a-e63e-481c-b5c8-fe78ce3f9d46.png)
@@ -25,22 +31,11 @@ GUI|CLI
 	<br>
 
 - [CLI 설치 과정](https://hoseong511.github.io/CS/OS/howto)
-	<br>
+	<br>	
 
 <br>
 
-### **2. 센토스와 데비안**
-
-- [센토스, 데비안](https://hoseong511.github.io/CS/OS/debian)
-
-- You must choose as an operating system either the latest stable version of Debian   
-
-	→ latest stable vsrsion([데비안](https://ko.wikipedia.org/wiki/%EB%8D%B0%EB%B9%84%EC%95%88#%EB%B0%B0%ED%8F%AC_%EC%97%AD%EC%82%AC), [센토스](https://ko.wikipedia.org/wiki/CentOS#%EB%B2%84%EC%A0%84_%EB%82%B4%EC%97%AD)) 및 `cat /etc/os-release` 확인
-	<br>
-
-<br>
-
-### **3. 파티션**
+### **2. 파티션**
 - You must create at least 2 encrypted partitions using LVM. Below is an example of the expected partitioning   
 
 	→ `lsblk`로 확인   	
@@ -53,7 +48,7 @@ GUI|CLI
 
 <br>
 
-### **4. 서비스**
+### **3. 서비스**
 
 서비스 | 설명
 :--------:|:--------
@@ -98,7 +93,7 @@ cron	| 크론테이블에 지정되어 있는 대로 특정 프로그램을 실�
 
 <br>
 
-### **5. 계정 관리**
+### **4. 계정 관리**
 - The `hostname` of your virtual machine must be your login ending with 42 (e.g., wil42). You will have to modify this hostname during your evaluation.   
 
 	→ 로그인된 후 유저명@`hostname` 확인, hostname 바꾼 후 적용되었는지 확인   
@@ -166,7 +161,7 @@ cron	| 크론테이블에 지정되어 있는 대로 특정 프로그램을 실�
 
 <br>
 
-### **6. 서버 모니터링**
+### **5. 서버 모니터링**
 - cron? 10분 마다 작동되고 오류 발생 처리하기
 
 	- 운영체제의 아키텍쳐와 커널 버전 
