@@ -124,10 +124,10 @@
 1. bash 환경에서 작동되는 monitoring.sh를 작성
 	- cron? 10분 마다 작동되고 오류 발생 처리하기
 	- 운영체제의 아키텍쳐와 커널 버전 `uname -a`
-	- 물리 프로세서의 개수 `grep -c physical\ id /proc/cpuinfo`
-	- 가상 프로세서의 개수 `grep -c processor /proc/cpuinfo`
-	- 서버 내에서 사용가능한 램 가동률을 백분율로 표시 `free -m | grep Mem | awk '{ printf "%d/%dMB (%.2f%%)\n", $3, $2, ($3/$2 * 100.0) }'`
-	- 서버 내에서 사용가능한 메모리 가동률을 백분율로 표시 `df -Bm | grep /LVMGroup | awk '{total += $2 ; used += $3;} END {g_total = total/1000; printf "%d/%dGb (%.2f%%) \n", used, g_total, used/total*100.0;}'`
+	- 물리 프로세서의 개수 `lscpu | grep ^CPU\( | awk '{print $2}'`
+	- 가상 프로세서의 개수 `lscpu | egrep "^Thread|^Core|^Socket" | awk -v mul=1 '{mul*=$2;} END {print mul}' FS=":"`
+	- 서버 내에서 사용가능한 램 가동률을 백분율로 표시 `free --mega | grep Mem | awk '{ printf "%d/%dMB (%.2f%%)\n", $3, $2, ($3/$2 * 100.0) }'`
+	- 서버 내에서 사용가능한 메모리 가동률을 백분율로 표시 `df -t ext4 -BM --total | grep total | awk '{printf "%d/%dGb (%.2f%%)\n", $3, $4/1000, $5}'`
 	- 현재 프로세서 가동률을 백분율로 표시 `top -bn1 | grep Cpu | awk '{ print (100-$4) "%"}' FS=','`
 	- 마지막 부팅 시간과 날짜 `who -b | awk '{print $3, $4}'`
 	- LVM이 활성화 되었는지 여부 `lsblk | grep -c lvm | awk '{if ($1 > 0) print "yes"; else print "no"}'`
@@ -256,3 +256,16 @@
 	- python3 app.py로 실행을 해야 `app.run(host='')` 부분이 실행된다.
 	- 
 - nohup flask !! - [https://imsoncod.tistory.com/17](https://imsoncod.tistory.com/17)
+
+
+## Virtual Box - cpu
+- CPU Hot-plugging 
+	- `VBoxManage modifyvm VM-name --cpuhotplug on` hotplug 기능이 켜져야 이용가능하다.
+	- `VBoxManage modifyvm born6_service --plugcpu 1`
+	- `VBoxManage modifyvm born6_service --unplugcpu 1` 숫자는 cpu의 아이디 
+	- `echo 1 > /sys/devices/system/cpu/cpu1/online` cpu1 켜기
+- VM virtualBox - [https://docs.oracle.com/en/virtualization/virtualbox/6.0/admin/cpuhotplug.html](https://docs.oracle.com/en/virtualization/virtualbox/6.0/admin/cpuhotplug.html)
+
+- how to get the number of vCPUs - [https://www.thegeekdiary.com/how-to-get-the-number-of-vcpus-that-oracle-vm-guest-can-get-in-oracle-vm/](https://www.thegeekdiary.com/how-to-get-the-number-of-vcpus-that-oracle-vm-guest-can-get-in-oracle-vm/)
+
+- df - [http://blog.imm.cnr.it/content/linux-check-disk-space-command-view-system-disk-usage-df-and-du](http://blog.imm.cnr.it/content/linux-check-disk-space-command-view-system-disk-usage-df-and-du)

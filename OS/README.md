@@ -67,10 +67,10 @@ cron	| 크론테이블에 지정되어 있는 대로 특정 프로그램을 실�
 
 - must be running at startup and its configuration has to be adapted for the project’s needs. AppArmor for Debian must be running at startup too.   
    
-	→ SELinux(`sestatus`) 또는 AppArmor(`aa-status`) 작동 확인 
+	→ AppArmor(`aa-status`) 작동 확인 
 <br>
 
-- SELinux와 AppArmor의 차이   
+- AppArmor   
    
 	→ [LINK](https://hoseong511.github.io/CS/OS/apparmor)
 <br>
