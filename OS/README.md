@@ -17,7 +17,7 @@
 
 - You must choose as an operating system either the latest stable version of Debian   
 
-	→ latest stable vsrsion([데비안](https://ko.wikipedia.org/wiki/%EB%8D%B0%EB%B9%84%EC%95%88#%EB%B0%B0%ED%8F%AC_%EC%97%AD%EC%82%AC), [센토스](https://ko.wikipedia.org/wiki/CentOS#%EB%B2%84%EC%A0%84_%EB%82%B4%EC%97%AD)) 및 `cat /etc/os-release` 확인
+	→ latest stable vsrsion([데비안](https://wiki.debian.org/DebianReleases), [센토스](https://ko.wikipedia.org/wiki/CentOS#%EB%B2%84%EC%A0%84_%EB%82%B4%EC%97%AD)) 및 `cat /etc/os-release` 확인
 	
    
 GUI|CLI
@@ -127,19 +127,22 @@ cron	| 크론테이블에 지정되어 있는 대로 특정 프로그램을 실�
 
 	→ 기간 규칙 확인(`/etc/login.def` ,`chage -l 유저명`)   
 
+	→ `date [+30days]`, `rdate` 원래 시간으로 복구   
+
 	→ 위 규칙 적용 비번 root : Qwert12345qwe, hossong : Qwert12345qwe    
 
 	→ 규칙 위반 비번 :   
 	```
 		1(10자 미만),   
 
-		qwert12345asdf(대문자x)  바뀌는거 확인 →  qwert12345ASDF
+		abc6988asdqwqwqw(대문자x)  바뀌는거 확인 →  abc6988ASDQwqwqw
 
-		qqqqW12345(같은문자3자까지하용)  바뀌는거 확인 →  qqqW123asdasSF5
+		qqqqW13246(같은문자3자까지하용)  바뀌는거 확인 →  qqqeW13246
 
-		hossong12345(유저명x)   바뀌는거 확인 →  hoss123qweQwe
-
-		4747CZ3qweQwe(7자이상바뀌지않음) 바뀌는거 확인 → 4747CZXqweQwe
+		hossong956676A(유저명x)   바뀌는거 확인 →  hosso956676A
+		rootABX956676(유저명x)   바뀌는거 확인 →  rooABX956676
+qweqwer956676A
+		qweqwe56676A(7자이상바뀌지않음) 바뀌는거 확인 → qweqwer6676A 
 	```
 	<br>
 
