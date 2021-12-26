@@ -30,23 +30,54 @@
 	```sh
 	apt install apparmor-utils
 	aa-genprof /path/to/binary
-	# 다른 터미널에서 해당 응용 프로그램의 여러가지 기능을 수행
+	# 다른 터미널에서 해당 응용 프로그램에서 작동
+	# 다른 터미널에서 실행 것들만 허용한다
 	aa-complain /path/to/binary
 	aa-enforce /path/to/binary
-	```
+	```   
 
-	[![asciicast](https://asciinema.org/a/4mgQT4ktUyegenHOjG72N9QsU.svg)](https://asciinema.org/a/4mgQT4ktUyegenHOjG72N9QsU)   
+	즉, 해당 프로그램에서 예기치 못한 실행 명령어들을 제한 할 수 있는 것이다.
 
-	<br>
+<!--[![asciicast](https://asciinema.org/a/4mgQT4ktUyegenHOjG72N9QsU.svg)](https://asciinema.org/a/4mgQT4ktUyegenHOjG72N9QsU)   -->
+
+- 프로파일 만들기 유튜브 - [https://www.youtube.com/watch?v=0t-UZFBNyF0](https://www.youtube.com/watch?v=0t-UZFBNyF0)
+	- Example 1   
+		```sh
+		sudo aa-genprof /home/hossong/sample
+		# 원하는 명령어들 실행...
+		scan
+		# 사용된 명령어들 조회
+		write
+		save
+		```   
+		```sh
+		sudo vim /etc/apparmor.d/home.hossong/sample
+
+		# Last Modified: Sun Dec 26 11:47:21 2021
+		#include <tunables/global>
+
+		/home/hossong/sample {
+		#include <abstractions/base>
+
+		/home/hossong/sample mr,
+		owner /home/*/test1 w,
+		# <이 부분에 허용할 명령어들을 추가할 수 있다>
+		}
+	- Example 2
+		```sh
+		aa-logprof #거부 처리된 항목을 조회하고 등록 여부를 진행함.
+		aa-disable
+		aa-enforce
+		```
+<br>
 
 - 비활성화하기   
 	```sh
-	sudo ln -s /etc/apparmor.d/usr.bin.sudo /etc/apparmor.d/disable/
-	sudo apparmor_parser -R /etc/apparmor.d/disable/usr.bin.sudo
-	sudo apparmor_status
+	sudo aa-disable [app명]
+	#sudo ln -s /etc/apparmor.d/usr.bin.sudo /etc/apparmor.d/disable/
+	#sudo apparmor_parser -R /etc/apparmor.d/disable/usr.bin.sudo
+	#sudo apparmor_status
 	```
-
-- 사용하지 않는 프로파일은 삭제
 
 <br>
 

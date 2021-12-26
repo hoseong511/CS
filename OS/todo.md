@@ -114,7 +114,7 @@
 	Defaults        secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin" #sudo 실행 시 만들어진 샌드박스 안에서 실행하게 하는 기능. 트로이목마 같이 path설정을 바꿔버리는 악성코드에 대해 예방이 가능하다. 즉, path를 바꾸는 코드가 심어진다면 실존하지 않는 샌드박스 경로에 심어져서 예방이 가능해진다는 말이다.
 	Defaults        passprompt="비밀번호를 묻는다"
 	Defaults        badpass_message="비밀번호 틀림 다시 시도!"
-	Defaults        requiretty
+	Defaults        requiretty  
 	Defaults        log_input, log_output
 	Defaults        iolog_dir="/var/log/sudo"
 	Defaults        passwd_tries=3
