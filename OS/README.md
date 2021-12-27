@@ -127,8 +127,6 @@ cron	| 크론테이블에 지정되어 있는 대로 특정 프로그램을 실�
 
 	→ 기간 규칙 확인(`/etc/login.def` ,`chage -l 유저명`)   
 
-	→ `date [+30days]`, `rdate` 원래 시간으로 복구   
-
 	→ 위 규칙 적용 비번 root : Qwert12345qwe, hossong : Qwert12345qwe    
 
 	→ 규칙 위반 비번 :   
@@ -141,7 +139,7 @@ cron	| 크론테이블에 지정되어 있는 대로 특정 프로그램을 실�
 
 		hossong956676A(유저명x)   바뀌는거 확인 →  hosso956676A
 		rootABX956676(유저명x)   바뀌는거 확인 →  rooABX956676
-qweqwer956676A
+		
 		qweqwe56676A(7자이상바뀌지않음) 바뀌는거 확인 → qweqwer6676A 
 	```
 	<br>
