@@ -23,5 +23,6 @@ int	main(void)
 		printf("%5.1f %6.0f\n", c, f);
 		c = 5.0/9.0 * ((f - STEP) - 32.0);
 	}
+	printf("%x\n", 0x66 & 0x39);
 	return (0);
 }
