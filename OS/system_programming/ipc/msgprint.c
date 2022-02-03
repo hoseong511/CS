@@ -21,5 +21,6 @@ int	main(void)
 	}
 	len = msgrcv(msgid, &msg, 50, 0, 0);
 	printf("Received Message is [%d] %s\n", len, msg.text);
+	msgctl(msgid, IPC_RMID, 0);
 	return (0);
 }
