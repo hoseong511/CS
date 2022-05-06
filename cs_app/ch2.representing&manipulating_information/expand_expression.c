@@ -32,8 +32,12 @@ int main(void)
 	show_bytes((byte_pointer) &usx, sizeof(unsigned short));
 	printf("x  = %d:\t", x);
 	show_bytes((byte_pointer) &x, sizeof(int));
-	printf("ux  = %u:\t", ux); // 자료형 크기를 먼저 바꾸고 unsigned 처리
+	printf("ux  = %u:\t", ux); 
 	show_bytes((byte_pointer) &ux, sizeof(unsigned int)); 
+
+	unsigned uy = sx; // 자료형 크기를 먼저 바꾸고 unsigned 처리
+	printf("uy = %u:\t", uy);
+	show_bytes((byte_pointer) &uy, sizeof(unsigned int)); 
 
 	printf("ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ\n");
 	printf("fun1(0x00000076) : %X\n", fun1(0x00000076));
