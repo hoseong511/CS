@@ -1,4 +1,5 @@
 #include "show_byte.h"
+#include <limits.h>
 
 int	fun1(unsigned word)
 {
@@ -55,4 +56,16 @@ int main(void)
 	printf("fun1(0x000000E6) : %X\n", fun1(0x000000E6));
 	printf("fun2(0x000000E6) : %X\n", fun2(0x000000E6));
 
+	int	a = __INT_MAX__ ;
+	long long b = __LONG_LONG_MAX__;
+	unsigned ua = __INT_MAX__ * 2U + 1U;
+	unsigned long long	ub = __LONG_LONG_MAX__ * 2ULL + 1ULL;
+	a++;
+	b++;
+	ua++;
+	ub++;
+	printf("INT_MAX + 1: %d \n", a);
+	printf("LLONG_MAX + 1: %lld \n", b);
+	printf("UINT_MAX + 1: %u \n", ua);
+	printf("ULONGLONG_MAX + 1: %lld \n", ub);
 }
