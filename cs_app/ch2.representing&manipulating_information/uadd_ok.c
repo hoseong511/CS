@@ -17,4 +17,6 @@ int	main(void)
 		printf("uadd_ok : %u\n", a+b);
 	else
 		printf("uadd_fail: %u\n", a+b);
+	while (1)
+		;
 }
