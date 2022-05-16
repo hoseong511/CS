@@ -1,6 +1,5 @@
 #include <stdio.h>
-
-typedef unsigned char *byte_pointer;
+#include "show_byte.h"
 
 void	show_bytes(byte_pointer start, size_t len)
 {
@@ -33,10 +32,4 @@ void	test_show_bytes(int val)
 	show_int(ival);
 	show_float(fval);
 	show_pointer(pval);
-}
-int	main(void)
-{
-	test_show_bytes(12345);
-
-	return (0);
 }
