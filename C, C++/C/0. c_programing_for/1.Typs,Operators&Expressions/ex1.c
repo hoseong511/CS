@@ -22,7 +22,10 @@ int	main(void)
 		if (i > max)
 			max = i;
 		if (i < min)
+		{
 			min = i;
+			break;
+		}
 	}
 	printf("char -> max : %ld, min : %ld\n", max, min);
 
