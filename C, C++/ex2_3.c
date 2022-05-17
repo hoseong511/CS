@@ -7,32 +7,42 @@ enum e_hex {A = 10, B = 11, C = 12, D = 13, E = 14, F = 15};
 
 int	htoi(char *s)
 {
-	int	i, n;
-	char c;
+	int	i, n, c;
 	n = 0;
 
-	for (i = strlen(s); i >= 0; i--)
+	for (i = 0; i < strlen(s); i++)
 	{
-		c = s[i-1];
-		if (tolower(s[1]) != 'x' && s[0] != '0')
-			break;
-		switch (c)
+		if (tolower(s[i]) == 'x' || (i == 0 && s[i] == '0'))
+			continue;
+		c = s[i];
+		if (isdigit(c))
+			n = 16 * n + (c -'0');
+		else
 		{
-		case 'a':
-			c = A;
-		case 'b':
-			c = B;
-		case 'c':
-			c = C;
-		case 'd':
-			c = D;
-		case 'e':
-			c = E;
-		case 'f':
-			c = F;
-		default:
-			n = 16 * n + (c - '0');
-			break;
+			switch (tolower(c))
+			{
+			case 'a':
+				c = A;
+				break;
+			case 'b':
+				c = B;
+				break;
+			case 'c':
+				c = C;
+				break;
+			case 'd':
+				c = D;
+				break;
+			case 'e':
+				c = E;
+				break;
+			case 'f':
+				c = F;
+				break;
+			default:
+				break;
+			}
+			n = 16 * n + c;
 		}
 	}
 	return (n);
@@ -40,5 +50,9 @@ int	htoi(char *s)
 
 int	main(void)
 {
-	printf("htoi() : %d\n", htoi("0x41"));
+	printf("htoi(%s) : %d\n","0x41", htoi("0x41"));
+	printf("htoi(%s) : %d\n","0x63", htoi("0x63"));
+	printf("htoi(%s) : %d\n","0x7f", htoi("0x7f"));
+	printf("htoi(%s) : %d\n","0xAB", htoi("0xAB"));
+	printf("htoi(%s) : %d\n","0xABC", htoi("0xABC"));
 }
