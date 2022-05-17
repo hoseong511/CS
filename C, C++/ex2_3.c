@@ -2,9 +2,6 @@
 #include <string.h>
 #include <stdio.h>
 
-enum e_hex {A = 10, B = 11, C = 12, D = 13, E = 14, F = 15};
-
-
 int	htoi(char *s)
 {
 	int	i, n, c;
@@ -19,29 +16,8 @@ int	htoi(char *s)
 			n = 16 * n + (c -'0');
 		else
 		{
-			switch (tolower(c))
-			{
-			case 'a':
-				c = A;
-				break;
-			case 'b':
-				c = B;
-				break;
-			case 'c':
-				c = C;
-				break;
-			case 'd':
-				c = D;
-				break;
-			case 'e':
-				c = E;
-				break;
-			case 'f':
-				c = F;
-				break;
-			default:
-				break;
-			}
+			c = toupper(c);
+			c = (c / 'A') * 10 + (c % 'A');
 			n = 16 * n + c;
 		}
 	}
