@@ -54,4 +54,6 @@ int main(void)
 	
 	printf("-1L < 1U : %d, -1L: %ld, 1U: %ld\n", -1L < 1U, -1L, (long) 1U); // 1U가 signed long으로 변환..
 	printf("-1L > 1UL : %d, -1L: %lu, 1UL: %lu\n", -1L > 1UL, (unsigned long) -1L, 1UL);
+
+	printf("%d\n", (1 << 31) - 1);
 }
