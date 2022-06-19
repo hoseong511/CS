@@ -24,7 +24,7 @@ unsigned	setbits(unsigned x, int p, int n, unsigned y)
 	int	a = (y & ~(~0 << n)) << (p + 1 - n);
 	int	b = x & (~0 << (p + 1));
 	int	c = x & ~(~0 << (p + 1 - n));
-	return (a + b + c);
+	return (a | b | c);
 }
 
 unsigned	invert(unsigned x, int p, int n)
@@ -33,7 +33,16 @@ unsigned	invert(unsigned x, int p, int n)
 	int	a2 = a1 << (p + 1 - n);
 	int	b = x & (~0 << (p + 1));
 	int	c = x & ~(~0 << (p + 1 - n));
-	return (a2 + b + c);
+	return (a2 | b | c);
+}
+
+unsigned	rightrot(int x, int n)
+{
+	int	end = 0;
+
+	end = ~end << n;
+	end = (x & ~end) << (8 * sizeof(x) - n);
+	return ((x >> n) | end);
 }
 
 int	main(void)
