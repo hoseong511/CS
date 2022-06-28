@@ -2,59 +2,37 @@
 #include "libft/libft.h"
 
 
-char	*expand(char *s1)
+void	expand(char *s1, char *s2)
 {
-	int i, start, end, len;
-	char	*s2;
+	int i, j, tmp;
 
-	i = 0;
+	i = j = 0;
 	while (s1[i])
 	{
-		if (s1[i] == '-')
-
-		i++;
-	}
-	if (ft_strchr(s1, '-'))
-	{
-		i = 0;
-		while (1)
+		if (s1[i] == '-' && s1[i + 1] &&
+			((ft_isdigit(s1[i - 1]) && ft_isdigit(s1[i + 1])) ||
+			(ft_isalpha(s1[i - 1]) && ft_isalpha(s1[i + 1]))))
 		{
-			if (i == 0 && ft_isalnum(s1[i]))
-				start = s1[i];
-			if (s1[i - 1] == '-')
-			{
-				end = s1[i];
-				break;
-			}
-			i++;
+			tmp = s1[i - 1] + 1;
+			while (tmp <= s1[i + 1])
+				s2[j++] = tmp++;
+			i += 2;
 		}
-		len = end - start;
-		s2 = malloc(sizeof(char) * (len + 1));
-		if (!s2)
-			return (NULL);
-		i = 0;
-		while (i < len + 1)
-		{
-			if (i == 0)
-				s2[i] = start;
-			else
-				s2[i] = s2[i - 1] + 1;
+		else if (s1[i] == '-')
 			i++;
-		}
-		s2[i] = '\0';
-		return (s2);
+		else
+			s2[j++] = s1[i++];
 	}
-	else
-		return (s1);
+	s2[j] = '\0';
 }
 
 int	main(int argc, char **argv)
 {
 	char *s1 = argv[1];
-	char *s2;
+	char s2[1024];
 
 	if (argc != 2)
 		return (0);
-	s2 = expand(s1);
+	expand(s1, s2);
 	ft_putendl_fd(s2, 1);
 }
