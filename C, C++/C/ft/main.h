@@ -2,9 +2,6 @@
 # define MAIN_H
 
 # include <stdio.h>
-
-
-int		atoi(char *s);
-
+# include <stdlib.h>
 
 #endif
