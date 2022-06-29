@@ -9,7 +9,7 @@ void	itob(int n, char s[], int b)
 	i = 0;
 	do
 	{
-		s[i++] = hex[abs(n) % b];
+		s[i++] = hex[abs(n % b)];
 	} while ((n /= b));
 	if (sign < 0)
 		s[i++] = '-';

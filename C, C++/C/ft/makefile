@@ -1,7 +1,7 @@
 NAME	= exe
 FLAGS	= -Wall -Wextra -Werror -g3
 HEADERS := -I.
-SRCS	:= itob.c atoi.c 
+SRCS	:= itoa_field.c
 
 
 all		:
