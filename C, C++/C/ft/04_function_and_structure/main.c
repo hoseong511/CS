@@ -7,5 +7,6 @@ int main(int argc, char *argv[])
 		return (0);
 	printf("%lf\n", ho_atof(argv[1]));
 	printf("%lf\n", atof(argv[1]));
+	printf("%lf\n", ho_atof_ext(argv[1]));
 	return (0);
 }

@@ -1,7 +1,7 @@
 NAME	= exe
 FLAGS	= -Wall -Wextra -Werror -g3
 HEADERS := -I.
-SRCS	:= main.c atof.c
+SRCS	:= main.c atof.c atof_ext.c
 
 
 all		:
