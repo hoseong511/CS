@@ -1,6 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <ctype.h>
+#include "main.h"
 
 #define MAXOP 100
 #define NUMBER '0'
@@ -12,9 +10,14 @@ int	getop(char s[])
 	while ((s[0] = c = getch()) == ' ' || c == '\t')
 		;
 	s[1] = '\0';
-	if (!isdigit(c) && c != '.')
-		return c;
 	i = 0;
+	if (!isdigit(c) && c != '.')
+	{
+		if ((s[0] = c) == '-' && isdigit(s[1] = c = getch()))
+			i++;
+		else
+			return c;
+	}
 	if (isdigit(c))
 		while (isdigit(s[++i] = c = getch()))
 			;
@@ -57,8 +60,19 @@ int main(void)
 				else
 					printf("error: zero divisor\n");
 				break;
+			case '%':
+				op2 = pop();
+				if (op2 != 0.0)
+					push((int)pop() % (int)op2);
+				else
+					printf("error: zero modulus\n");
+				break;
+			case 'c':
+				clear();
+				printf("clear\n");
+				break;
 			case '\n':
-				printf("\t%.8g\n", pop());
+				printf("\t%.8g\n", top_show());
 				break;
 			default:
 				printf("erorr: unknown command %s\n", s);

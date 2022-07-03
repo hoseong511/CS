@@ -1,3 +1,4 @@
+#include "main.h"
 #define MAXVAL 100
 
 int sp = 0;
@@ -22,4 +23,23 @@ double	pop(void)
 		printf("error: stack empty\n");
 		return 0.0;
 	}
+}
+
+double top_show(void)
+{
+	if (sp > 0)
+		return val[sp - 1];
+	else
+	{
+		printf("stack empty\n");
+		return 0.0;
+	}
+}
+
+void	clear(void)
+{
+	if (sp > 0)
+		sp = 0;
+	else
+		printf("error: stack empty\n");
 }

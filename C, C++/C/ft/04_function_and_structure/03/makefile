@@ -7,7 +7,7 @@ SRCS	:= main.c getchar.c stack.c
 all		:
 		@make $(NAME)
 
-$(NAME)	: $(SRCS) $(LIBFT)
+$(NAME)	: $(SRCS)
 		$(CC) $(FLAGS) $^ -o $@ $(HEADERS)
 		
 clean	:
